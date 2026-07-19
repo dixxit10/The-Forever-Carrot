@@ -672,7 +672,7 @@ const PATH_COORDS = [
 ];
 
 const boardEl = document.getElementById("board");
-const OFFICE_FILLER_EMOJI = [" ","💻"," ","☕️"," "," ","🖨️","💰"," "," "];
+const OFFICE_FILLER_EMOJI = ["💻"," "," ","☕️"," "," ","🖨️","💰"," "," "];
 
 function renderBoard(){
   document.querySelectorAll(".cell").forEach(c=>c.remove());
@@ -718,14 +718,14 @@ renderBoard();
 const DIALOGUE_POOL = [
   {
     type: "dialogue",
-    tag: {zh:"影印機格 · 奇葩對話", en:"Copier Room · Bizarre Encounter"},
-    npc: {zh:"老鳥同事", en:"[EN] Senior Coworker"},
+    tag: {zh:"影印機 · 奇葩對話", en:"Copier Room · Bizarre Encounter"},
+    npc: {zh:"老鳥同事", en:"Senior Coworker"},
     npcRole: "role-senior",
-    text: {zh:"這疊報表幫我印一下並分類夾好，等等開會要用，謝謝啦！", en:"Need you to sort these for the meeting. Thanks!"},
+    text: {zh:"這疊報表幫我印一下並分類，等等開會要用的", en:"Need you to sort these for the meeting, thanks."},
     choices: [
-      { text:{zh:"「交給我吧，包在我身上！」", en:"\ Sure, I'll take care of it!\""}, effect: { salary: 50, mental: -1.5 }, reply:{zh:"老鳥拍拍你的肩膀：「有前途！」但你犧牲了午休時間，也磨掉了不少耐性。", en:"The senior pats your shoulder: \"You've got a bright future!\" Your lunch break is officially dead, and so is a chunk of your patience."} },
-      { text:{zh:"「不好意思，我手上的企劃也很急。」", en:"\ My project is on fire, sorry.\""}, effect: { salary: 0, mental: -0.5 }, reply:{zh:"老鳥嘖了一聲，一臉不悅地抱走文件。雖然逃過一劫，但那個眼神你今天都忘不掉。", en:"The senior grumbles and stomps off. You escaped, but that look on their face is going to haunt you all day."} },
-      { text:{zh:"「我先幫你印，但等等要先做完手上的急件喔！」", en:"\"I'll help, but let me wrap up my urgent task first!\""}, effect: { salary: 80, mental: 0.5 }, reply:{zh:"老鳥答應了你的條件，這次合作氣氛意外融洽，還誇你做事有分寸、拿捏得剛剛好。", en:"The senior agrees to your terms. The exchange goes surprisingly well—they praise you for having a good sense of boundaries."} }
+      { text:{zh:"「好的，交給我！」", en:"\ Sure, I'll take care of it!\""}, effect: { salary: 50, mental: -1.5 }, reply:{zh:"老鳥拍拍你的肩膀：「有前途！」但你犧牲了午休時間，也磨掉了不少耐性。", en:"The senior pats your shoulder: \"You've got a bright future!\" Your lunch break is officially dead, and so is a chunk of your patience."} },
+      { text:{zh:"「不好意思，我手上的文件也很急。」", en:"\ My project is on fire too.\""}, effect: { salary: 0, mental: -0.5 }, reply:{zh:"老鳥嘖了一聲，一臉不悅地抱走文件。雖然逃過一劫，但那個眼神你今天都忘不掉。", en:"The senior grumbles and stomps off. You escaped, but that look on their face is going to haunt you all day."} },
+      { text:{zh:"「我先幫你印，但等等會先做完手上的急件喔！」", en:"\"I'll help, but let me wrap up my urgent task first!\""}, effect: { salary: 80, mental: 0.5 }, reply:{zh:"老鳥答應了你的條件，還誇你做事有分寸、拿捏得剛剛好。", en:"The senior agrees to your terms. The exchange goes surprisingly well—they praise you for having a good sense of boundaries."} }
     ]
   },
   {
@@ -733,11 +733,11 @@ const DIALOGUE_POOL = [
     tag: {zh:"茶水間 · 奇葩對話", en:"Break Room · Bizarre Dialogue"},
     npc: {zh:"人資", en:"HR"},
     npcRole: "role-hr",
-    text: {zh:"即日起公司為了體恤員工，全面實施『彈性上下班』制度喔！", en:"Starting today, out of care for employees, we're rolling out 'flexible working hours'!"},
+    text: {zh:"為了體恤員工，全面實施『彈性上下班』制度喔！", en:"Starting today, out of care for employees, we're rolling out 'flexible working hours'!"},
     choices: [
       { text:{zh:"「太棒了！終於可以睡飽再來了！」", en:"\"Great! Finally I can sleep in!\""}, effect: { salary: 0, mental: -1.5 }, reply:{zh:"隔天主管晚上11點密你：『這份報告明早8點前給我。』你這才意識到『彈性』是雙向的，而且方向對你很不利。", en:"The next night at 11pm, your manager messages: 'Have this report ready by 8am.' You realize 'flexible' cuts both ways—and not in your favor."} },
-      { text:{zh:"「這代表下班時間也會『彈性延伸』吧...」", en:"\"So that means off-hours can 'flexibly extend' too...\" (dead inside)"}, effect: { salary: 0, mental: -3 }, reply:{zh:"人資嘆口氣說你缺乏公司認同感。你的精神受到了毀滅性的重創，久久無法回神。", en:"HR sighs and says you lack company loyalty. Your spirit takes a devastating hit you can't quite shake off."} },
-      { text:{zh:"「聽起來不錯，那我先照自己的步調適應看看。」", en:"\"Sounds good, I'll ease into it at my own pace.\""}, effect: { salary: 60, mental: 0.5 }, reply:{zh:"人資點頭稱讚你心態健康，你也順利替自己爭取到一點喘息空間。", en:"HR nods approvingly at your healthy attitude, and you quietly carve out some breathing room."} }
+      { text:{zh:"「這代表下班時間也會『彈性延伸』嗎?」", en:"\"So that means off-hours can 'flexibly extend' too...\" (dead inside)"}, effect: { salary: 0, mental: -3 }, reply:{zh:"人資嘆口氣說你缺乏公司認同感。你的精神受到了毀滅性的重創，久久無法回神。", en:"HR sighs and says you lack company loyalty. Your spirit takes a devastating hit you can't quite shake off."} },
+      { text:{zh:"「聽起來不錯，那我先照自己的步調適應看看。」", en:"\"Sounds good, I'll ease into it at my own pace.\""}, effect: { salary: 60, mental: 0.5 }, reply:{zh:"人資點頭稱讚你心態健康，你也替自己爭取到一點喘息空間。", en:"HR nods approvingly at your healthy attitude, and you quietly carve out some breathing room."} }
     ]
   },
   {
@@ -749,7 +749,7 @@ const DIALOGUE_POOL = [
     choices: [
       { text:{zh:"「這是你們需求沒講清楚，不能全怪我們！」", en:"\"Your requirements weren't clear, it's not all on us!\""}, effect: { salary: -150, mental: -1.5 }, reply:{zh:"對方跟主管告狀，主管表示大局為重讓你吞下去。合約差點告吹，倒扣薪水。", en:"They complain to your manager, who tells you to just take it for the team. The contract nearly fell through; salary docked."} },
       { text:{zh:"「好，我通知主管後立刻幫忙協助修正。」", en:"\"Okay, I'll notify my manager and fix it right away.\""}, effect: { salary: 100, mental: -2.5 }, reply:{zh:"專案被你爆肝救回來了！獲得了額外的加班津貼，但你的靈魂也黑了兩塊。", en:"You saved the project by burning the midnight oil! Got overtime pay, but lost a bit more of your soul."} },
-      { text:{zh:"「我先幫忙看一下問題出在哪，我們一起補。」", en:"\"Let me take a look at what went wrong—we can fix it together.\""}, effect: { salary: 50, mental: 0.5 }, reply:{zh:"你展現了合作的態度，成功化解對方的火氣，這次意外地雙贏收場。", en:"Your cooperative attitude defuses their frustration. This one somehow ends as a win-win."} }
+      { text:{zh:"「我先幫忙看一下問題出在哪，我們一起補。」", en:"\"Let me take a look at what went wrong—we can fix it together.\""}, effect: { salary: 50, mental: 0 }, reply:{zh:"你表示需要合作才能解決，但靈魂還是黑了1塊。", en:"Your cooperative attitude defuses their frustration. This one somehow ends as a win-win."} }
     ]
   }
 ];
@@ -761,8 +761,8 @@ const CARD_POOL = [
     front: {zh:"組長神秘兮兮地拍你肩膀：「今晚全組聚餐，歡迎你加入這個溫馨大家庭！」", en:"Your team lead taps your shoulder mysteriously: \"Team dinner tonight, welcome to the family!\""},
     badChance: 0.55,
     bad: {
-      backLabel: {zh:"AA制強制敬酒", en:"Mandatory Split-Bill Toast"},
-      backText: {zh:"聚餐到一半主管提早離席。結帳時組長說：『大家共攤喔，含主管的一共是 $60。』你看著帳單，感覺又被啃掉了一塊靈魂。", en:"...Your manager leaves early. At checkout, the lead says: We're splitting the bill—manager included—so that's $60 each. You stare at the receipt and feel another chunk of your soul chipped away."},
+      backLabel: {zh:"AA制強制聚餐", en:"Mandatory Split-Bill Toast"},
+      backText: {zh:"聚餐到一半主管提早離席。結帳時組長拿著帳單說：『含主管的一共是$60。』你看著帳單，感覺又被啃掉了一塊靈魂。", en:"...Your manager leaves early. At checkout, the lead says: We're splitting the bill—manager included—so that's $60 each. You stare at the receipt and feel another chunk of your soul chipped away."},
       effect: { salary: -60, mental: -1.5 }
     },
     good: {
