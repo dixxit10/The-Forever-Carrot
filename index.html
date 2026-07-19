@@ -673,8 +673,8 @@ const CARD_POOL = [
     type: "card",
     tag: {zh:"無人角落 · 機會卡", en:"Empty Corner · Opportunity Card"},
     front: {zh:"你的KPI連續拿到 A+！總經理在週會上親自點名要提名你做小主管！", en:"Your KPIs are consistently A+! The GM personally names you for a promotion at the weekly meeting!"},
-    backLabel: {zh:"大環境不景氣 · 凍結升遷", en:"[EN] Economic Downturn · Promotions Frozen"},
-    backText: {zh:"下午公告：因全球通膨，凍結所有晉升名額。該職缺由董事長剛回國的兒子兼任。", en:"[EN] Afternoon announcement: due to global inflation, all promotions are frozen. The role goes to the Chairman's son, who just returned from abroad."},
+    backLabel: {zh:"大環境不景氣 · 凍結升遷", en:"Economic Downturn · Promotions Frozen"},
+    backText: {zh:"下午公告：因全球通膨，凍結所有晉升名額。該職缺由董事長剛回國的兒子兼任。", en:"Announcement: due to global inflation, all promotions are frozen. The role goes to the CEO's son, who just returned from abroad."},
     effect: { salary: 0, mental: -2 }
   },
   { 
@@ -1121,9 +1121,9 @@ function renderMemory(ev){
 function renderTelepathy(ev){
   const scriptPool = [
     { req:{zh:"五彩斑斕的黑", en:"a colorful kind of black"}, correct:"A", msg:{zh:"你居然看懂了黑色的層次，主管讚嘆你是視覺天才。", en:"You actually understood the layers of black. The manager calls you a visual genius."} },
-    { req:{zh:"大氣中帶點靈動的波點", en:"grand yet playfully lively polka dots"}, correct:"B", msg:{zh:"水藍色的波點完美擊中主管的審美，他滿意地點點頭。", en:"The light blue dots perfectly matched the manager's taste. He nods with satisfaction."} },
+    { req:{zh:"大氣中帶點靈動", en:"grand yet playfully lively polka dots"}, correct:"B", msg:{zh:"水藍色的波點完美擊中主管的審美，他滿意地點點頭。", en:"The light blue dots perfectly matched the manager's taste. He nods with satisfaction."} },
     { req:{zh:"沉穩卻不失跳脫的線條", en:"steady lines that still feel unconventional"}, correct:"C", msg:{zh:"交錯的對角斜線讓主管覺得非常高冷有深度。", en:"The crisscrossing diagonal lines strike the manager as cool and deep."} },
-    { req:{zh:"充滿未來科幻感的漸層", en:"a gradient full of futuristic sci-fi vibes"}, correct:"D", msg:{zh:"流動的高級科技漸層完美符合通靈指標。", en:"The flowing high-tech gradient perfectly matches what he was thinking."} }
+    { req:{zh:"充滿未來科幻感", en:"a gradient full of futuristic sci-fi vibes"}, correct:"D", msg:{zh:"流動的高級科技漸層完美符合通靈指標。", en:"The flowing high-tech gradient perfectly matches what he was thinking."} }
   ];
   const quiz = scriptPool[Math.floor(Math.random() * scriptPool.length)];
   const reqText = T(quiz.req);
@@ -1134,10 +1134,10 @@ function renderTelepathy(ev){
   eventCard.appendChild(reqBox);
 
   const plates = [
-    { code: "A", cls: "art-a", title:{zh:"提案一：暗黑矩陣", en:"Proposal 1: Dark Matrix"} },
-    { code: "B", cls: "art-b", title:{zh:"提案二：靈動光點", en:"Proposal 2: Lively Dots"} },
-    { code: "C", cls: "art-c", title:{zh:"提案三：幾何對角", en:"Proposal 3: Geometric Diagonals"} },
-    { code: "D", cls: "art-d", title:{zh:"提案四：科技漸層", en:"Proposal 4: Tech Gradient"} }
+    { code: "A", cls: "art-a", title:{zh:"提案一", en:"Proposal 1"} },
+    { code: "B", cls: "art-b", title:{zh:"提案二", en:"Proposal 2"} },
+    { code: "C", cls: "art-c", title:{zh:"提案三", en:"Proposal 3"} },
+    { code: "D", cls: "art-d", title:{zh:"提案四", en:"Proposal 4"} }
   ];
 
   const grid = document.createElement("div");
@@ -1267,7 +1267,7 @@ function determineEnding(){
       return {
         isEarly: true,
         title: {zh:"破產流浪漢", en:"The Bankrupt Outcast"},
-        quote: {zh:"【職涯提前登出】你在各種奇葩事件和遊戲挫折中，資產被無情倒扣至 $0！你甚至還沒看見董事長的大門，就因為對公司毫無產值、甚至倒貼公款，被保全無情地架出大樓。恭喜你，提早告別了這座圍城，開啟流浪新篇章。", en:"[EN] [Career Terminated Early] Your assets were mercilessly docked to $0 through a series of bizarre events and setbacks! You never even reached the Chairman's office before being escorted out by security for having zero productivity — and even costing the company money. Congratulations, you've been released early into a new chapter of wandering."},
+        quote: {zh:"【職涯提前登出】你在各種奇葩事件和遊戲挫折中，資產被無情倒扣至 $0！你甚至還沒看見董事長的大門，就因為對公司毫無產值、甚至倒貼公款，被保全無情地架出大樓。恭喜你，提早告別了這座圍城，開啟流浪新篇章。", en:"[DUMPED BY HR] Your assets were mercilessly docked to $0 through a series of bizarre events and setbacks! You never even reached the Chairman's office before being escorted out by security for having zero productivity — and even costing the company money. Congratulations, you've been released early into a new chapter of wandering."},
         fig: "scapegoat"
       };
     }
@@ -1275,7 +1275,7 @@ function determineEnding(){
       return {
         isEarly: true,
         title: {zh:"精神病院VIP", en:"[EN] The Lunatic Asylum VIP"},
-        quote: {zh:"【職涯提前登出】你的心智值在第 " + state.step + " 關完全歸零！公司的內卷、KPI壓力和主管的通靈要求徹底擊碎了你的靈魂。你現在看見白色影印紙都會發抖，大喊著『五彩斑斕的黑』。你在大考驗結束前就被強制送醫治療了。", en:"[Career Terminated Early] Your mental health hit zero at stage " + state.step + "! The rat race, KPI pressure, and your manager's cryptic demands shattered your soul completely. You now shudder at the sight of blank printer paper, muttering about \"a colorful kind of black\". You were institutionalized before the trial could finish."},
+        quote: {zh:"【職涯提前登出】你的心智值在第 " + state.step + " 關完全歸零！公司的內卷、KPI壓力和主管的通靈要求徹底擊碎了你的靈魂。你現在看見白色影印紙都會發抖，大喊著『五彩斑斕的黑』。你在大考驗結束前就被強制送醫治療了。", en:"[DUMPED BY HR] Your mental health hit zero at stage " + state.step + "! The rat race, KPI pressure, and your manager's cryptic demands shattered your soul completely. You now shudder at the sight of blank printer paper, muttering about \"a colorful kind of black\". You were institutionalized before the trial could finish."},
         fig: "autopilot"
       };
     }
