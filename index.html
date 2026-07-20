@@ -15,15 +15,15 @@
     --cyan:#4FA8D1;
     --cyan-dark-real:#2F7FA4;
     --cyan-light:#E6F4FA;
-    --coral:#FF7A60;
+    --coral:#ff6648;
     --coral-light:#FFF0ED;
-    --gold:#C9A227;
+    --gold:#cca628;
     --plum:#8B6F9E;
     --navy:#3E5C86;
     --sage:#6B9B76;
-    --rust:#B5651D;
+    --rust:#904708;
     --violet:#8464B0;
-    --tangerine:#E08E45;
+    --tangerine:#e038a5;
     font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -82,41 +82,49 @@
   
   .figure.role-ceo .head{ border-color:var(--gold); }
   .figure.role-ceo .torso{ background:var(--gold); }
+  .figure.role-ceo .arms{ background:var(--gold); }
   .figure.role-ceo .head::before{ content:""; position:absolute; top:-9px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:8px solid var(--gold); }
 
   
   .figure.role-kin .head{ border-color:var(--plum); }
   .figure.role-kin .torso{ background:var(--plum); }
-  .figure.role-kin .head::before{ content:""; position:absolute; top:-6px; right:-3px; width:9px; height:9px; background:var(--plum); border-radius:50% 50% 50% 0; transform:rotate(45deg); }
+  .figure.role-kin .arms{ background:var(--plum); }
+  /* .figure.role-kin .head::before{ content:""; position:absolute; top:-6px; right:-3px; width:9px; height:9px; background:var(--plum); border-radius:50% 50% 50% 0; transform:rotate(45deg); } */
 
   
   .figure.role-mgr .head{ border-color:var(--navy); }
   .figure.role-mgr .torso{ background:var(--navy); }
+  .figure.role-mgr .arms{ background:var(--navy); }
   .figure.role-mgr .head::after{ content:""; position:absolute; top:9px; left:2px; right:2px; height:3px; background:var(--navy); border-radius:2px; }
 
   
   .figure.role-jan .head{ border-color:var(--sage); }
   .figure.role-jan .torso{ background:var(--sage); }
-  .figure.role-jan .head::before{ content:""; position:absolute; top:-7px; left:50%; transform:translateX(-50%); width:19px; height:9px; background:var(--sage); border-radius:9px 9px 0 0; }
+  .figure.role-jan .arms{ background:var(--sage); }
+  /* .figure.role-jan .head::before{ content:""; position:absolute; top:-7px; left:50%; transform:translateX(-50%); width:19px; height:9px; background:var(--sage); border-radius:9px 9px 0 0; }*/
 
   
   .figure.role-slave .head{ border-color:var(--coral); }
   .figure.role-slave .torso{ background:var(--line); }
-  .figure.role-slave .head::after{ content:""; position:absolute; bottom:20px; left:50%; transform:translateX(-50%); width:20px; height:5px; background:var(--coral); border-radius:2px; }
+  .figure.role-slave .arms{ background:var(--line); }
+  /* .figure.role-slave .head::before{ content:""; position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:13px; height:8px; background:var(--coral); border-radius:9px 9px 0 0; } */
 
   
   .figure.role-senior .head{ border-color:var(--rust); }
   .figure.role-senior .torso{ background:var(--rust); }
+  .figure.role-senior .arms{ background:var(--rust); }
 
   
   .figure.role-hr .head{ border-color:var(--violet); }
   .figure.role-hr .torso{ background:var(--violet); }
-  .figure.role-hr .head::before{ content:""; position:absolute; top:9px; left:-5px; width:4px; height:4px; border-radius:50%; background:var(--violet); box-shadow:23px 0 0 var(--violet); }
+  .figure.role-hr .arms{ background:var(--violet); }
+  .figure.role-hr .head::before{ content:""; position:absolute; top:9px; left:-5px; width:4px; height:4px; border-radius:50%; background:var(--violet); box-shadow:28px 0 0 var(--violet); }
 
   
   .figure.role-pm .head{ border-color:var(--tangerine); }
   .figure.role-pm .torso{ background:var(--tangerine); }
-  .figure.role-pm .head::after{ content:""; position:absolute; top:-2px; left:-3px; right:-3px; height:14px; border:2px solid var(--tangerine); border-bottom:none; border-radius:12px 12px 0 0; background:transparent; }
+  .figure.role-pm .arms{ background:var(--tangerine); }
+  /* .figure.role-pm .head::after{ content:""; position:absolute; top:-2px; left:-3px; right:-3px; height:14px; border:2px solid var(--tangerine); border-bottom:none; border-radius:12px 12px 0 0; background:transparent; } */
 
   #screen-start{ justify-content:flex-start; padding-top:8vh; gap:20px; width:100%; }
   .title-block{ text-align:center; }
@@ -247,7 +255,7 @@
   .cell.task{ border-color:var(--line); color:var(--ink); background:#fff; }
   .cell.task .tnum{ font-size:13px; }
   .cell.task.done{ background:var(--cyan-light); border-color:var(--cyan); color:var(--cyan-dark-real); }
-  .cell.start{ background:var(--line); color:#fff; font-size:9.5px; letter-spacing:1px; }
+  .cell.start{ background:var(--line); color:#fff; font-size:12px; letter-spacing:1px; }
   .cell.deco::after{ content:""; width:5px; height:5px; border-radius:50%; background:var(--gray-light); }
   .cell.crown{ border-color:var(--cyan); background:var(--cyan-light); }
   .cell.empty-deco{ border:none; background:transparent; font-size:20px; opacity:.45; pointer-events:none; }
@@ -265,7 +273,7 @@
   .dice-panel{
     position:absolute; inset:0;
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
-    background:rgba(247,247,245,.92);
+    background:rgba(247,247,245,.72);
     border-radius:16px;
     transition:opacity .25s ease;
     z-index: 15;
@@ -496,7 +504,7 @@ const UI_TEXT = {
   flipHint: { zh:"點擊卡片翻面", en:"Click to flip your fate" },
   onlyPathMsg: { zh:"看來這是你唯一能走的路。", en:"Looks like this is the only path left." },
   enterCompanyBtn: { zh:"進入辦公室", en:"Clock In & Start" },
-  rollBtn: { zh:"擲骰子 (Roll)", en:"Roll the Dice" },
+  rollBtn: { zh:"擲骰子", en:"Roll the Dice" },
   entrance: { zh:"辦公室", en:"Office" },
   certTitle: { zh:"牛馬職員職位評定書", en:"Official Corporate Liability Report" },
   earlyTag: { zh:"職涯異常登出", en:"DUMPED BY HR" },
@@ -508,25 +516,25 @@ const UI_TEXT = {
   restartBtn: { zh:"重返職場", en:"Restart" },
   playerLabel: { zh:"牛馬職員", en:"Desk Drone" },
   cardHintBefore: { zh:"點擊翻開命運卡...", en:"Flip your fate..." },
-  cardHintAfter: { zh:"命運已經翻開，覆水難收。", en:"No turning back now." },
+  cardHintAfter: { zh:"命運已經翻開，無法重來。", en:"No turning back now." },
   catchTip: { zh:"■ 藍色公文(得分) | ▲ 紅色垃圾(扣分)", en:"■ Blue = Productivity | ▲ Red = Trash" },
   catchCaught: { zh:n=>`已接：${n} / 5`, en:n=>`Caught: ${n} / 5` },
   catchMissed: { zh:n=>`漏接：${n} / 3`, en:n=>`Missed: ${n} / 3` },
   catchFailTrash: { zh:"糟糕！接到了紅色的午餐垃圾，被主管迎頭痛罵！", en:"Yikes. You caught the trash. Boss is screaming." },
   catchFailDrop: { zh:"重要公文摔了一地，商業機密漏光了。", en:"Oops. Confidential data just hit the floor." },
   catchSuccess: { zh:"效率爆棚！公文完美分類歸檔！", en:"Peak productivity achieved." },
-  catchFailPrefix: { zh:"【失敗】", en:"[Fail]" },
+  catchFailPrefix: { zh:"", en:"" },
   catchFailDefault: { zh:"業務疏失。", en:"Human error." },
-  memHud: { zh:n=>`配對錯誤次數：${n} / 3`, en:n=>`Screw-ups: ${n} / 3` },
+  memHud: { zh:n=>`配對錯誤：${n} / 3`, en:n=>`Screw-ups: ${n} / 3` },
   memSuccess: { zh:"神準記憶！三大客戶全部配對成功！", en:"Nailed it. Clients are happy." },
   memFail: { zh:"把 Gary 叫成 Terry...客戶震怒退件。", en:"Called Gary \"Terry\"... Account lost." },
   teleReqPrefix: { zh:req=>`主管需求：「要一種 ${req} 的感覺。」`, en:req=>`Manager: Make it look more ${req}."` },
-  teleSuccessPrefix: { zh:"【成功】", en:"[Nailed it]" },
+  teleSuccessPrefix: { zh:"", en:"" },
   teleFail: { zh:req=>`『我要的是${req}！這什麼垃圾？重做！』`, en:req=>`"That’s not ${req}! Absolute garbage. Redo it."` },
   revealBtn: { zh:"揭曉最終職位評定", en:"Reveal My Paygrade" },
   settleBtn: { zh:"繼續", en:"Continue" },
-  retryBtn: { zh:"重來 (Retry)", en:"Retry" },
-  advanceBtn: { zh:score=>`前進 (${score || "Next"})`, en:score=>`Next (${score || "Next"})` },
+  retryBtn: { zh:"再試一次", en:"Retry" },
+  advanceBtn: { zh:score=>`接受 (${score || "Next"})`, en:score=>`Next (${score || "Next"})` },
   copyLinkBtn: { zh:"複製連結", en:"Copy Link" },
   copiedLinkToast: { zh:"連結已複製！", en:"Link copied!" },
   copyLinkFailToast: { zh:"複製失敗，請手動複製網址。", en:"Copy failed. Please copy the URL manually." },
@@ -574,7 +582,7 @@ const unlockRow = document.getElementById("unlock-row");
 
 const rosterData = [
   { id:"ceo", label:{zh:"董事長", en:"CEO"}, msg:{zh:"首抽投胎是門技術活，看來你上輩子沒練好。", en:"Life is a lottery. Looks like you didn't buy a winning ticket in your past life."}, ok:false },
-  { id:"kin", label:{zh:"董事長親友", en:"Kin"}, msg:{zh:"你跟董事長目前唯一的交集只有在同一個地球上，回去重選。", en:"You and the CEO share nothing but the same oxygen. Pick again."}, ok:false },
+  { id:"kin", label:{zh:"老闆兒子Kevin", en:"Kin"}, msg:{zh:"DNA 檢測未通過，你沒有這個血統", en:"You and the CEO share nothing but the same oxygen. Pick again."}, ok:false },
   { id:"mgr", label:{zh:"管理幹部", en:"Manager"}, msg:{zh:"你才剛入職就想一步登天? 還是去基層好好接受社會毒打吧。", en:"Nice try. Go get humbled in the trenches before you talk about a promotion."}, ok:false },
   { id:"slave", label:{zh:"牛馬職員", en:"Full-time Employee"}, msg:{zh:"", en:""}, ok:true },
   { id:"jan", label:{zh:"清潔人員", en:"Junior"}, msg:{zh:"現在連掃地都要碩士學歷和3年工作經驗了，你資歷不夠。", en:"Entry-level position. Must have 5 years of experience and the ability to teleport. You’re underqualified."}, ok:false },
@@ -683,7 +691,7 @@ function renderBoard(){
     let cls = "cell deco";
     let inner = "";
     if(idx === 0){ cls = "cell start"; inner = t("entrance"); }
-    else if(idx === 10) { cls = "cell task crown"; inner = `<span class="tnum">👑</span>`; }
+    else if(idx === 10) { cls = "cell task crown"; inner = `<span class="tnum">董事長室</span>`; }
     else if(idx % 2 === 0) {
       cls = "cell task";
       inner = `<span class="tnum">!</span>`;
@@ -721,11 +729,11 @@ const DIALOGUE_POOL = [
     tag: {zh:"影印機 · 奇葩對話", en:"Copier Room · Bizarre Encounter"},
     npc: {zh:"老鳥同事", en:"Senior Coworker"},
     npcRole: "role-senior",
-    text: {zh:"這疊報表幫我印一下並分類，等等開會要用的", en:"Need you to sort these for the meeting, thanks."},
+    text: {zh:"這疊報表幫我印一下並分類，等等開會要用的。", en:"Could you print and sort these reports for me? I need them for the meeting later."},
     choices: [
-      { text:{zh:"「好的，交給我！」", en:"\ Sure, I'll take care of it!\""}, effect: { salary: 50, mental: -1.5 }, reply:{zh:"老鳥拍拍你的肩膀：「有前途！」但你犧牲了午休時間，也磨掉了不少耐性。", en:"The senior pats your shoulder: \"You've got a bright future!\" Your lunch break is officially dead, and so is a chunk of your patience."} },
-      { text:{zh:"「不好意思，我手上的文件也很急。」", en:"\ My project is on fire too.\""}, effect: { salary: 0, mental: -0.5 }, reply:{zh:"老鳥嘖了一聲，一臉不悅地抱走文件。雖然逃過一劫，但那個眼神你今天都忘不掉。", en:"The senior grumbles and stomps off. You escaped, but that look on their face is going to haunt you all day."} },
-      { text:{zh:"「我先幫你印，但等等會先做完手上的急件喔！」", en:"\"I'll help, but let me wrap up my urgent task first!\""}, effect: { salary: 80, mental: 0.5 }, reply:{zh:"老鳥答應了你的條件，還誇你做事有分寸、拿捏得剛剛好。", en:"The senior agrees to your terms. The exchange goes surprisingly well—they praise you for having a good sense of boundaries."} }
+      { text:{zh:"沒問題！包在我身上！", en:"\ Sure, I'll take care of it!\""}, effect: { salary: 50, mental: -1.5 }, reply:{zh:"老鳥拍拍你的肩膀：「有前途！」但你犧牲了午休時間，也磨掉了不少耐性。", en:"The senior pats your shoulder: \"You've got a bright future!\" Your lunch break is officially dead, and so is a chunk of your patience."} },
+      { text:{zh:"不好意思，我現在沒空。", en:"\ Sorry, I’m tied up right now.\""}, effect: { salary: 0, mental: -0.5 }, reply:{zh:"老鳥嘖了一聲，一臉不悅地抱走文件。雖然逃過一劫，但那個眼神你今天都忘不掉。", en:"The senior grumbles and stomps off. You escaped, but that look on their face is going to haunt you all day."} },
+      { text:{zh:"我忙完這件立刻印，順便幫您做頁籤標記！", en:"\"I’ll print them right after this, and add tabs for you!\""}, effect: { salary: 80, mental: 0.5 }, reply:{zh:"老鳥答應了你的條件，還誇你做事有分寸、拿捏得剛剛好。", en:"The senior agrees to your terms. The exchange goes surprisingly well—they praise you for having a good sense of boundaries."} }
     ]
   },
   {
@@ -733,11 +741,11 @@ const DIALOGUE_POOL = [
     tag: {zh:"茶水間 · 奇葩對話", en:"Break Room · Bizarre Dialogue"},
     npc: {zh:"人資", en:"HR"},
     npcRole: "role-hr",
-    text: {zh:"為了體恤員工，全面實施『彈性上下班』制度喔！", en:"Starting today, out of care for employees, we're rolling out 'flexible working hours'!"},
+    text: {zh:"為了體恤員工，全面實施『彈性上下班』制度喔！", en:"To support employee wellness, we’re officially rolling out 'Flexible Work Hours'!"},
     choices: [
-      { text:{zh:"「太棒了！終於可以睡飽再來了！」", en:"\"Great! Finally I can sleep in!\""}, effect: { salary: 0, mental: -1.5 }, reply:{zh:"隔天主管晚上11點密你：『這份報告明早8點前給我。』你這才意識到『彈性』是雙向的，而且方向對你很不利。", en:"The next night at 11pm, your manager messages: 'Have this report ready by 8am.' You realize 'flexible' cuts both ways—and not in your favor."} },
-      { text:{zh:"「這代表下班時間也會『彈性延伸』嗎?」", en:"\"So that means off-hours can 'flexibly extend' too...\" (dead inside)"}, effect: { salary: 0, mental: -3 }, reply:{zh:"人資嘆口氣說你缺乏公司認同感。你的精神受到了毀滅性的重創，久久無法回神。", en:"HR sighs and says you lack company loyalty. Your spirit takes a devastating hit you can't quite shake off."} },
-      { text:{zh:"「聽起來不錯，那我先照自己的步調適應看看。」", en:"\"Sounds good, I'll ease into it at my own pace.\""}, effect: { salary: 60, mental: 0.5 }, reply:{zh:"人資點頭稱讚你心態健康，你也替自己爭取到一點喘息空間。", en:"HR nods approvingly at your healthy attitude, and you quietly carve out some breathing room."} }
+      { text:{zh:"太棒了！那明天我可以睡到飽再過來了！", en:"\"Great! Finally I can sleep in!\""}, effect: { salary: 0, mental: -1.5 }, reply:{zh:"主管晚上11點密你：這份報告明早8點前給我。你這才意識到『彈性』是雙向的，而且方向對你很不利。", en:"The next night at 11pm, your manager messages: 'Have this report ready by 8am.' You realize 'flexible' cuts both ways—and not in your favor."} },
+      { text:{zh:"哇！那下班時間也可以彈性提早走嗎？", en:"\"So that means off-hours can 'flexibly extend' too...\" (dead inside)"}, effect: { salary: 0, mental: -3 }, reply:{zh:"發言大逆不道，直接被黑心智重傷。", en:"HR sighs and says you lack company loyalty. Your spirit takes a devastating hit you can't quite shake off."} },
+      { text:{zh:"謝謝HR，我會依照團隊步調彈性調整。", en:"\"Sounds good, I'll ease into it at my own pace.\""}, effect: { salary: 60, mental: 0.5 }, reply:{zh:"人資點頭稱讚你心態健康，你也替自己爭取到一點喘息空間。", en:"HR nods approvingly at your healthy attitude, and you quietly carve out some breathing room."} }
     ]
   },
   {
@@ -747,9 +755,9 @@ const DIALOGUE_POOL = [
     npcRole: "role-pm",
     text: {zh:"這個專案進度大延期，完全是因為你們部門沒有及時交出數據，這報告你今天之內必須修好它！", en:"This project is way behind schedule, entirely because your department didn't deliver data in time. Fix this report today!"},
     choices: [
-      { text:{zh:"「這是你們需求沒講清楚，不能全怪我們！」", en:"\"Your requirements weren't clear, it's not all on us!\""}, effect: { salary: -150, mental: -1.5 }, reply:{zh:"對方跟主管告狀，主管表示大局為重讓你吞下去。合約差點告吹，倒扣薪水。", en:"They complain to your manager, who tells you to just take it for the team. The contract nearly fell through; salary docked."} },
-      { text:{zh:"「好，我通知主管後立刻幫忙協助修正。」", en:"\"Okay, I'll notify my manager and fix it right away.\""}, effect: { salary: 100, mental: -2.5 }, reply:{zh:"專案被你爆肝救回來了！獲得了額外的加班津貼，但你的靈魂也黑了兩塊。", en:"You saved the project by burning the midnight oil! Got overtime pay, but lost a bit more of your soul."} },
-      { text:{zh:"「我先幫忙看一下問題出在哪，我們一起補。」", en:"\"Let me take a look at what went wrong—we can fix it together.\""}, effect: { salary: 50, mental: 0 }, reply:{zh:"你表示需要合作才能解決，但靈魂還是黑了1塊。", en:"Your cooperative attitude defuses their frustration. This one somehow ends as a win-win."} }
+      { text:{zh:"當初需求你自己沒寫清楚，憑什麼甩鍋給我們？", en:"\"Your specs were vague to begin with. Why blame us?\""}, effect: { salary: -150, mental: -1.5 }, reply:{zh:"對方跟主管告狀，主管表示大局為重讓你吞下去。合約差點告吹，倒扣薪水。", en:"They complain to your manager, who tells you to just take it for the team. The contract nearly fell through; salary docked."} },
+      { text:{zh:"這屬於跨部門流程，我呈報主管後，今晚加班幫您趕出來。", en:"\"Since it's cross-departmental, I'll notify my manager and pull an all-nighter to finish it.\""}, effect: { salary: 100, mental: -2.5 }, reply:{zh:"搬出高層+專案被你爆肝救回來了，但你的靈魂也黑了兩塊。", en:"You saved the project by burning the midnight oil! Got overtime pay, but lost a bit more of your soul."} },
+      { text:{zh:"我幫忙你看問題出在哪，我們一起補。", en:"\"Let me take a look at what went wrong—we can fix it together.\""}, effect: { salary: 50, mental: 0 }, reply:{zh:"同事跟你一起解決，但靈魂還是黑了一塊。", en:"The coworker helped you fix it, but a piece of your soul died inside."} }
     ]
   }
 ];
@@ -757,12 +765,12 @@ const DIALOGUE_POOL = [
 const CARD_POOL = [
   { 
     type: "card",
-    tag: {zh:"轉角走道 · 機率卡", en:"Corner Hallway · Chance Card"},
+    tag: {zh:"轉角走道 · 機會卡", en:"Corner Hallway · Chance Card"},
     front: {zh:"組長神秘兮兮地拍你肩膀：「今晚全組聚餐，歡迎你加入這個溫馨大家庭！」", en:"Your team lead taps your shoulder mysteriously: \"Team dinner tonight, welcome to the family!\""},
     badChance: 0.55,
     bad: {
       backLabel: {zh:"AA制強制聚餐", en:"Mandatory Split-Bill Toast"},
-      backText: {zh:"聚餐到一半主管提早離席。結帳時組長拿著帳單說：『含主管的一共是$60。』你看著帳單，感覺又被啃掉了一塊靈魂。", en:"...Your manager leaves early. At checkout, the lead says: We're splitting the bill—manager included—so that's $60 each. You stare at the receipt and feel another chunk of your soul chipped away."},
+      backText: {zh:"聚餐到一半主管提早離席。結帳時組長拿著帳單說：『含主管每人付$60。』你看著帳單，感覺又被啃掉了一塊靈魂。", en:"...Your manager leaves early. At checkout, the lead says: We're splitting the bill—manager included—so that's $60 each. You stare at the receipt and feel another chunk of your soul chipped away."},
       effect: { salary: -60, mental: -1.5 }
     },
     good: {
@@ -773,23 +781,23 @@ const CARD_POOL = [
   },
   { 
     type: "card",
-    tag: {zh:"無人角落 · 機率卡", en:"Empty Corner · Chance Card"},
+    tag: {zh:"無人角落 · 機會卡", en:"Empty Corner · Chance Card"},
     front: {zh:"你的KPI連續拿到 A+！總經理在週會上親自點名要提名你做小主管！", en:"Your KPIs are consistently A+! The GM personally names you for a promotion at the weekly meeting!"},
     badChance: 0.55,
     bad: {
       backLabel: {zh:"大環境不景氣 · 凍結升遷", en:"Economic Downturn"},
-      backText: {zh:"下午公告：因全球通膨，凍結所有晉升名額。該職缺由董事長剛回國的兒子兼任。你盯著公告看了很久，久到同事都問你還好嗎。", en:"Announcement: Promotions are frozen. The role has been claimed by the CEO's son, just back from his travels abroad. You stare at the notice so long a coworker asks if you're okay."},
+      backText: {zh:"下午公告：因全球通膨，凍結所有晉升名額。該職缺由董事長兒子Kevin兼任。你盯著公告看了很久，久到同事都問你還好嗎。", en:"ANN: Promotions are frozen. The role has been claimed by the CEO's son, just back from his travels abroad. You stare at the notice so long a coworker asks if you're okay."},
       effect: { salary: 0, mental: -2.5 }
     },
     good: {
       backLabel: {zh:"升遷成真", en:"The Promotion Is Real"},
-      backText: {zh:"董事長的兒子這次剛好沒興趣搶功，升遷公告正式生效，你的職稱與薪水同步調高。", en:"For once the chairman's son wasn't interested. The promotion goes through for real—your title and pay both go up."},
+      backText: {zh:"Kevin這次剛好沒興趣搶功，升遷公告正式生效，你的職稱與薪水同步調高。", en:"For once the chairman's son wasn't interested. The promotion goes through for real—your title and pay both go up."},
       effect: { salary: 250, mental: 1 }
     }
   },
   { 
     type: "card",
-    tag: {zh:"下午茶時間 · 機率卡", en:"Afternoon Tea · Chance Card"},
+    tag: {zh:"下午茶時間 · 機會卡", en:"Afternoon Tea · Chance Card"},
     front: {zh:"同事們在座位區騷動，正在發起瘋狂午茶盲盒團購！還差一個人就免運費了，大家都轉頭看著你...", en:"Your coworkers are buzzing about a group order for mystery-box afternoon tea! One more person for free shipping, and everyone's looking at you..."},
     badChance: 0.55,
     bad: {
@@ -799,16 +807,16 @@ const CARD_POOL = [
     },
     good: {
       backLabel: {zh:"婉拒成功", en:"Politely Declined"},
-      backText: {zh:"你笑著說已經吃過下午茶了，同事們也沒為難你，順便幫忙湊到免運，還被記了一份人情。", en:"You smile and say you've already eaten. No hard feelings—you even helped them hit free shipping, and earn a small favor owed."},
-      effect: { salary: 50, mental: 0.5 }
+      backText: {zh:"你笑著說已經吃過下午茶了，同事們也沒為難你。", en:"You smile and say you've already eaten. No hard feelings—you."},
+      effect: { salary: 0, mental: 0.5 }
     }
   }
 ];
 
 const GAME_POOL = [
-  { type: "catch", tag: {zh:"辦公桌 · 動作小遊戲：極速接文件", en:"Desk Space · Mini-Game: Rapid Document Catch"} },
-  { type: "memory", tag: {zh:"會議室 · 動作小遊戲：客戶名字記憶翻牌", en:"Meeting Room · Mini-Game: Client Name Memory Match"} },
-  { type: "telepathy", tag: {zh:"設計部 · 動作小遊戲：主管形容詞通靈", en:"Design Dept · Mini-Game: Guess the Manager's Vague Request"} }
+  { type: "catch", tag: {zh:"辦公桌 · 極速接文件", en:"Desk Space · Rapid Document Catch"} },
+  { type: "memory", tag: {zh:"會議室 · 客戶名字記憶", en:"Meeting Room · Client Name Memory Match"} },
+  { type: "telepathy", tag: {zh:"設計部 · 形容詞通靈", en:"Design Dept · Guess the Manager's Vague Request"} }
 ];
 
 const FINAL_BOSS_EVENT = {
@@ -1243,10 +1251,10 @@ function renderMemory(ev){
 
 function renderTelepathy(ev){
   const scriptPool = [
-    { req:{zh:"五彩斑斕的黑", en:"a colorful kind of black"}, correct:"A", msg:{zh:"你居然看懂了黑色的層次，主管讚嘆你是視覺天才。", en:"You actually understood the layers of black. The manager calls you a visual genius."} },
-    { req:{zh:"大氣中帶點靈動", en:"grand yet playfully lively polka dots"}, correct:"B", msg:{zh:"水藍色的波點完美擊中主管的審美，他滿意地點點頭。", en:"The light blue dots perfectly matched the manager's taste. He nods with satisfaction."} },
-    { req:{zh:"沉穩卻不失跳脫的線條", en:"steady lines that still feel unconventional"}, correct:"C", msg:{zh:"交錯的對角斜線讓主管覺得非常高冷有深度。", en:"The crisscrossing diagonal lines strike the manager as cool and deep."} },
-    { req:{zh:"充滿未來科幻感", en:"a gradient full of futuristic sci-fi vibes"}, correct:"D", msg:{zh:"流動的高級科技漸層完美符合通靈指標。", en:"The flowing high-tech gradient perfectly matches what he was thinking."} }
+    { req:{zh:"五彩斑斕的黑", en:"a colorful black"}, correct:"A", msg:{zh:"你居然看懂了黑色的層次，主管讚嘆你是視覺天才。", en:"You actually understood the layers of black. The manager calls you a visual genius."} },
+    { req:{zh:"大氣中帶點靈動", en:"grand, yet subtly dynamic"}, correct:"B", msg:{zh:"水藍色的波點完美擊中主管的審美，他滿意地點點頭。", en:"The light blue dots perfectly matched the manager's taste. He nods with satisfaction."} },
+    { req:{zh:"沉穩卻不失跳脫的線條", en:"grounded lines that still feel unconventional"}, correct:"C", msg:{zh:"交錯的對角斜線讓主管覺得非常高冷有深度。", en:"The crisscrossing diagonal lines strike the manager as cool and deep."} },
+    { req:{zh:"充滿未來科幻感", en:"loaded with futuristic, sci-fi aesthetics"}, correct:"D", msg:{zh:"流動的高級科技漸層完美符合通靈指標。", en:"The flowing high-tech gradient perfectly matches what he was thinking."} }
   ];
   const quiz = scriptPool[Math.floor(Math.random() * scriptPool.length)];
   const reqText = T(quiz.req);
@@ -1383,11 +1391,11 @@ function getScoreText(scoreEffect) {
 }
 
 function determineEnding(){
-  // 只剩「心智歸零」會提前退出；破產結局已移除，薪水歸零後遊戲仍會跑完全程
+ 
   if (state.mental <= 0) {
     return {
       isEarly: true,
-      title: {zh:"精神病院VIP", en:"[EN] The Lunatic Asylum VIP"},
+      title: {zh:"精神病院VIP", en:"The Lunatic Asylum VIP"},
       quote: {zh:"【職涯提前登出】你的心智值在第 " + state.step + " 關完全歸零！公司的內卷、KPI壓力和主管的通靈要求徹底擊碎了你的靈魂。你現在看見白色影印紙都會發抖，大喊著『五彩斑斕的黑』。你在大考驗結束前就被強制送醫治療了。", en:"[DUMPED BY HR] Your mental health hit zero at stage " + state.step + "! The rat race, KPI pressure, and your manager's cryptic demands shattered your soul completely. You now shudder at the sight of blank printer paper, muttering about \"a colorful kind of black\". You were institutionalized before the trial could finish."},
       fig: "autopilot"
     };
@@ -1413,13 +1421,13 @@ function determineEnding(){
 
   if(state.salary < 4450){
     return { isEarly: false, title:{zh:"頂級背鍋俠", en:"The Ultimate Scapegoat"},
-      quote:{zh:"你雖然撐完了 10 關，但在各項業務中屢屢出錯，完美承擔了公司所有的雷。你不是在背鍋，空間是在去背鍋的路上。主管和同事們都發自內心地感謝你的巨大犧牲。", en:"You made it through all 10 stages, but kept making mistakes along the way, perfectly absorbing every blow for the company. If you're not taking the blame, you're on your way to take it. Your manager and coworkers sincerely thank you for your huge sacrifice."},
+      quote:{zh:"你雖然撐完了 10 關，但在各項業務中屢屢出錯，完美承擔了公司所有的雷。你不是在背鍋，就是在去背鍋的路上。主管和同事們都發自內心地感謝你的巨大犧牲。", en:"You made it through all 10 stages, but kept making mistakes along the way, perfectly absorbing every blow for the company. If you're not taking the blame, you're on your way to take it. Your manager and coworkers sincerely thank you for your huge sacrifice."},
       fig:"scapegoat" };
   }
   
   if(state.mental <= 2){
     return { isEarly: false, title:{zh:"自動導航型社畜", en:"The Autopilot Drone"},
-      quote:{zh:"你在各種奇葩對話與折磨中耗盡了心智。你的精神已進化到靈魂肉體分離的最高境界。主管在前面口沫橫飛地罵你，你的大腦會自動切換成靜音模式。", en:"You've drained your sanity through endless bizarre conversations and torment. Your spirit has evolved to the ultimate state of mind-body separation. While your manager rants in front of you, your brain automatically switches to mute."},
+      quote:{zh:"你在各種奇葩對話與折磨中耗盡了心智。你的精神已進化到靈魂肉體分離的最高境界。即使主管在前面口沫橫飛地罵你，你的大腦都會自動切換成靜音模式。", en:"You've drained your sanity through endless bizarre conversations and torment. Your spirit has evolved to the ultimate state of mind-body separation. While your manager rants in front of you, your brain automatically switches to mute."},
       fig:"autopilot" };
   }
   
