@@ -525,7 +525,7 @@ const UI_TEXT = {
   onlyPathMsg: { zh:"看來這是你唯一能走的路。", en:"Congrats. This is your only option." },
   enterCompanyBtn: { zh:"進入辦公室", en:"Clock In" },
   confirmRoleBtn: { zh:"確認選擇", en:"Confirm Role" },
-  unavailableRoleBtn: { zh:"無法選擇，繼續滑下一位", en:"Role Unavailable" },
+  unavailableRoleBtn: { zh:"無法選擇，繼續滑下一位", en:"Role Unavailable. Swiping next!" },
   rollBtn: { zh:"擲骰子", en:"Roll the Dice" },
   entrance: { zh:"辦公室", en:"Office" },
   certTitle: { zh:"牛馬職員職位評定書", en:"Corporate Survival Report" },
@@ -542,7 +542,7 @@ const UI_TEXT = {
   catchTip: { zh:"■ 藍色公文(得分) | ▲ 紅色垃圾(扣分)", en:"■ Blue = Productivity | ▲ Red = Trash" },
   catchCaught: { zh:n=>`已接：${n} / 5`, en:n=>`Caught: ${n} / 5` },
   catchMissed: { zh:n=>`漏接：${n} / 3`, en:n=>`Missed: ${n} / 3` },
-  catchFailTrash: { zh:"糟糕！接到了紅色的午餐垃圾，被主管迎頭痛罵！", en:"You caught the trash. HR heard the yelling." },
+  catchFailTrash: { zh:"糟糕！接到了紅色的午餐垃圾，被主管迎頭痛罵！", en:"Oops! You caught the trash." },
   catchFailDrop: { zh:"重要公文摔了一地，商業機密漏光了。", en:"Confidential files: now floor decor." },
   catchSuccess: { zh:"效率爆棚！公文完美分類歸檔！", en:"Inbox zero. Miracles happen." },
   catchFailPrefix: { zh:"", en:"" },
@@ -550,7 +550,7 @@ const UI_TEXT = {
   memHud: { zh:n=>`配對錯誤：${n} / 3`, en:n=>`Screw-ups: ${n} / 3` },
   memSuccess: { zh:"神準記憶！三大客戶全部配對成功！", en:"Perfect match. Clients remain calm." },
   memFail: { zh:"把 Gary 叫成 Terry...客戶震怒退件。", en:"You called Gary \"Terry.\" Account lost." },
-  teleReqPrefix: { zh:req=>`主管需求：「要一種 ${req} 的感覺。」`, en:req=>`Manager: Make it look more ${req}."` },
+  teleReqPrefix: { zh:req=>`主管需求：「要一種 ${req} 的感覺。」`, en:req=>`Manager: Make it look more ${req}.` },
   teleSuccessPrefix: { zh:"", en:"" },
   teleFail: { zh:req=>`『我要的是${req}！這什麼垃圾？重做！』`, en:req=>`"That’s not ${req}! Redo it."` },
   revealBtn: { zh:"揭曉最終職位評定", en:"Reveal My Paygrade" },
@@ -1231,7 +1231,7 @@ function renderCatch(ev){
     el.dataset.trash = isTrash ? "1" : "0";
     area.appendChild(el);
     items.push(el);
-    catchSpawnTimer = setTimeout(spawnItem, 1300);
+    catchSpawnTimer = setTimeout(spawnItem, 1150);
   }
   spawnItem();
 
