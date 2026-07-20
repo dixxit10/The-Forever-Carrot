@@ -1126,14 +1126,14 @@ function renderCatch(ev){
     el.dataset.trash = isTrash ? "1" : "0";
     area.appendChild(el);
     items.push(el);
-    catchSpawnTimer = setTimeout(spawnItem, 950);
+    catchSpawnTimer = setTimeout(spawnItem, 900);
   }
   spawnItem();
 
   function loop(){
     if(done) return;
     items.forEach(el=>{
-      let yPos = parseFloat(el.dataset.top) + 2.5;
+      let yPos = parseFloat(el.dataset.top) + 1.7;
       el.dataset.top = yPos;
       el.style.top = yPos+"px";
       if(yPos > 120 && yPos < 145){
@@ -1253,7 +1253,7 @@ function renderTelepathy(ev){
   const scriptPool = [
     { req:{zh:"五彩斑斕的黑", en:"a colorful black"}, correct:"A", msg:{zh:"你居然看懂了黑色的層次，主管讚嘆你是視覺天才。", en:"You actually understood the layers of black. The manager calls you a visual genius."} },
     { req:{zh:"大氣中帶點靈動", en:"grand, yet subtly dynamic"}, correct:"B", msg:{zh:"水藍色的波點完美擊中主管的審美，他滿意地點點頭。", en:"The light blue dots perfectly matched the manager's taste. He nods with satisfaction."} },
-    { req:{zh:"沉穩卻不失跳脫的線條", en:"grounded lines that still feel unconventional"}, correct:"C", msg:{zh:"交錯的對角斜線讓主管覺得非常高冷有深度。", en:"The crisscrossing diagonal lines strike the manager as cool and deep."} },
+    { req:{zh:"沉穩不失跳脫的線條", en:"grounded lines that still feel unconventional"}, correct:"C", msg:{zh:"交錯的對角斜線讓主管覺得非常高冷有深度。", en:"The crisscrossing diagonal lines strike the manager as cool and deep."} },
     { req:{zh:"充滿未來科幻感", en:"loaded with futuristic, sci-fi aesthetics"}, correct:"D", msg:{zh:"流動的高級科技漸層完美符合通靈指標。", en:"The flowing high-tech gradient perfectly matches what he was thinking."} }
   ];
   const quiz = scriptPool[Math.floor(Math.random() * scriptPool.length)];
