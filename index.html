@@ -525,7 +525,7 @@ const UI_TEXT = {
   onlyPathMsg: { zh:"看來這是你唯一能走的路。", en:"Congrats. This is your only option." },
   enterCompanyBtn: { zh:"進入辦公室", en:"Clock In" },
   confirmRoleBtn: { zh:"確認選擇", en:"Confirm Role" },
-  unavailableRoleBtn: { zh:"無法選擇，請繼續滑", en:"Role Unavailable" },
+  unavailableRoleBtn: { zh:"無法選擇，繼續滑下一位", en:"Role Unavailable" },
   rollBtn: { zh:"擲骰子", en:"Roll the Dice" },
   entrance: { zh:"辦公室", en:"Office" },
   certTitle: { zh:"牛馬職員職位評定書", en:"Corporate Survival Report" },
@@ -1231,7 +1231,7 @@ function renderCatch(ev){
     el.dataset.trash = isTrash ? "1" : "0";
     area.appendChild(el);
     items.push(el);
-    catchSpawnTimer = setTimeout(spawnItem, 900);
+    catchSpawnTimer = setTimeout(spawnItem, 1300);
   }
   spawnItem();
 
