@@ -80,25 +80,25 @@
   .figure .label{ position:absolute; bottom:-15px; left:0; right:0; text-align:center; font-size:10.5px; color:var(--gray); font-weight:600; white-space:nowrap; }
 
   
-  .figure.role-ceo .head{ border-color:var(--gold); }
+  .figure.role-ceo .head{ border-color:var(--line); }
   .figure.role-ceo .torso{ background:var(--gold); }
   .figure.role-ceo .arms{ background:var(--gold); }
   .figure.role-ceo .head::before{ content:""; position:absolute; top:-9px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:8px solid var(--gold); }
 
   
-  .figure.role-kin .head{ border-color:var(--plum); }
+  .figure.role-kin .head{ border-color:var(--line); }
   .figure.role-kin .torso{ background:var(--plum); }
   .figure.role-kin .arms{ background:var(--plum); }
   /* .figure.role-kin .head::before{ content:""; position:absolute; top:-6px; right:-3px; width:9px; height:9px; background:var(--plum); border-radius:50% 50% 50% 0; transform:rotate(45deg); } */
 
   
-  .figure.role-mgr .head{ border-color:var(--navy); }
+  .figure.role-mgr .head{ border-color:var(--line); }
   .figure.role-mgr .torso{ background:var(--navy); }
   .figure.role-mgr .arms{ background:var(--navy); }
   .figure.role-mgr .head::after{ content:""; position:absolute; top:9px; left:2px; right:2px; height:3px; background:var(--navy); border-radius:2px; }
 
   
-  .figure.role-jan .head{ border-color:var(--sage); }
+  .figure.role-jan .head{ border-color:var(--line); }
   .figure.role-jan .torso{ background:var(--sage); }
   .figure.role-jan .arms{ background:var(--sage); }
   /* .figure.role-jan .head::before{ content:""; position:absolute; top:-7px; left:50%; transform:translateX(-50%); width:19px; height:9px; background:var(--sage); border-radius:9px 9px 0 0; }*/
@@ -110,23 +110,23 @@
   /* .figure.role-slave .head::before{ content:""; position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:13px; height:8px; background:var(--coral); border-radius:9px 9px 0 0; } */
 
   
-  .figure.role-senior .head{ border-color:var(--rust); }
+  .figure.role-senior .head{ border-color:var(--line); }
   .figure.role-senior .torso{ background:var(--rust); }
   .figure.role-senior .arms{ background:var(--rust); }
 
   
-  .figure.role-hr .head{ border-color:var(--violet); }
+  .figure.role-hr .head{ border-color:var(--line); }
   .figure.role-hr .torso{ background:var(--violet); }
   .figure.role-hr .arms{ background:var(--violet); }
   .figure.role-hr .head::before{ content:""; position:absolute; top:9px; left:-5px; width:4px; height:4px; border-radius:50%; background:var(--violet); box-shadow:28px 0 0 var(--violet); }
 
   
-  .figure.role-pm .head{ border-color:var(--tangerine); }
+  .figure.role-pm .head{ border-color:var(--line); }
   .figure.role-pm .torso{ background:var(--tangerine); }
   .figure.role-pm .arms{ background:var(--tangerine); }
   /* .figure.role-pm .head::after{ content:""; position:absolute; top:-2px; left:-3px; right:-3px; height:14px; border:2px solid var(--tangerine); border-bottom:none; border-radius:12px 12px 0 0; background:transparent; } */
 
-  #screen-start{ justify-content:flex-start; padding-top:8vh; gap:20px; width:100%; }
+  #screen-start{ justify-content:flex-start; padding-top:9vh; gap:20px; width:100%; }
   .title-block{ text-align:center; }
   .title-block h1{ font-size:20px; margin-top:6px; color:var(--ink); letter-spacing:1px; }
   
@@ -217,9 +217,12 @@
   .flip-card:hover .flip-front{ border-color:var(--coral); transform:translateY(-4px); box-shadow:0 8px 24px rgba(255,122,96,0.12); }
   .flip-hint{ font-size:10px; color:var(--gray); text-align:center; margin-top:8px; letter-spacing:.5px; }
 
-  .unlock-row{ min-height:60px; display:flex; width:100%; align-items:center; justify-content:center; margin-top:10px; }
+  .unlock-row{ min-height:60px; display:flex; width:100%; align-items:center; justify-content:center; margin-top:10px; padding:0 40px; }
+  .unlock-row .btn{ width:100%; max-width:240px; }
+  .unlock-row .btn.locked{ background:var(--gray-light); border-color:var(--gray-light); color:var(--gray); box-shadow:none; cursor:not-allowed; }
+  .unlock-row .btn.ready{ background:var(--cyan); border-color:var(--cyan); color:#fff; box-shadow:0 6px 18px rgba(79,168,209,.35); }
 
-  #screen-game{ justify-content:flex-start; padding:60px 12px; }
+  #screen-game{ justify-content:flex-start; padding:90px 12px; }
   .statusbar{ width:100%; display:flex; justify-content:space-between; align-items:center; padding:12px 14px; background:var(--panel); border-radius:14px; border:1px solid var(--gray-light); margin-bottom:16px; }
   .stat-label{ font-size:9px; letter-spacing:1px; color:var(--gray); font-weight:700; }
   .stat-value{ font-size:15px; font-weight:800; margin-top:2px; }
@@ -300,14 +303,26 @@
   }
   .event-modal.active{ display:flex; }
   .event-card{
-    width:100%; max-width: 320px; max-height:98%;
-    overflow-y:auto;
+    width:100%; max-width:320px;
+    height:520px; max-height:calc(100% - 12px);
+    overflow:hidden;
     background:var(--panel);
     border:1.5px solid var(--gray-light);
     border-radius:16px;
     padding:20px 18px;
-    display:flex; flex-direction:column; gap:20px;
+    display:flex; flex-direction:column; gap:16px;
     box-shadow:0 20px 40px rgba(0,0,0,.15);
+  }
+  .event-card > .dialogue-box,
+  .event-card > .choices,
+  .event-card > .card-wrap,
+  .event-card > .memory-grid,
+  .event-card > .tele-options,
+  .event-card > .catch-area{ flex-shrink:0; }
+  .event-card .choices{ overflow-y:auto; min-height:0; }
+  @media (max-height:700px){
+    .event-card{ height:460px; gap:12px; padding:16px; }
+    .catch-area{ height:145px; }
   }
   .event-tag{ font-size:10px; letter-spacing:1px; color:var(--cyan-dark-real); font-weight:800; }
   .actors-row{ display:flex; justify-content:space-around; padding: 4px 0; }
@@ -331,7 +346,8 @@
   .catch-item.trash{ width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-bottom:18px solid #FF5A5A; background:none; }
   .paddle{ position:absolute; bottom:6px; width:42px; height:42px; transition:left .12s linear; }
   .catch-controls{ display:flex; justify-content:center; gap:8px; width:100%; }
-  .catch-controls .btn{ flex:1; text-align:center; padding: 8px 0; }
+  .catch-controls .btn{ flex:1; text-align:center; padding:12px 0; touch-action:none; }
+  .catch-controls .btn.holding{ background:var(--cyan-light); border-color:var(--cyan); transform:translateY(1px); }
   .catch-hud{ display:flex; justify-content:space-between; font-size:11px; color:var(--gray); font-weight:700; }
   .catch-tip{ font-size:10.5px; text-align:center; color:var(--gray); background:var(--gray-light); padding:5px; border-radius:6px; }
 
@@ -352,7 +368,7 @@
   .art-canvas.art-d{ background:linear-gradient(to right, #000, #4FA8D1, #FFF); }
   .art-title{ font-size:11px; font-weight:600; color:var(--ink); }
 
-  .next-row{ display:flex; gap:8px; justify-content:center; width:100%; margin-top:4px; }
+  .next-row{ display:flex; gap:8px; justify-content:center; width:100%; margin-top:auto; flex-shrink:0; }
   .next-row .btn { flex: 1; text-align: center; padding: 10px 0; }
 
   #screen-end{ justify-content:center; padding-top:4vh; }
@@ -383,7 +399,7 @@
 
   .lang-toggle{
     position:absolute;
-    margin-top: 5px;
+    margin-top: 10px;
     top:16px;
     right:16px;
     z-index:200;
@@ -500,37 +516,39 @@ function T(field){
 }
 
 const UI_TEXT = {
-  swipeHint: { zh:"← 左右滑動查看其他角色 →", en:"← Swipe to browse the talent pool →" },
-  flipHint: { zh:"點擊卡片翻面", en:"Click to flip your fate" },
-  onlyPathMsg: { zh:"看來這是你唯一能走的路。", en:"Looks like this is the only path left." },
-  enterCompanyBtn: { zh:"進入辦公室", en:"Clock In & Start" },
+  swipeHint: { zh:"← 左右滑動查看其他角色 →", en:"← Swipe to browse roles →" },
+  flipHint: { zh:" ", en:" " },
+  onlyPathMsg: { zh:"看來這是你唯一能走的路。", en:"Congrats. This is your only option." },
+  enterCompanyBtn: { zh:"進入辦公室", en:"Clock In" },
+  confirmRoleBtn: { zh:"確認選擇", en:"Confirm Role" },
+  unavailableRoleBtn: { zh:"此角色無法選擇", en:"Role Unavailable" },
   rollBtn: { zh:"擲骰子", en:"Roll the Dice" },
   entrance: { zh:"辦公室", en:"Office" },
-  certTitle: { zh:"牛馬職員職位評定書", en:"Official Corporate Liability Report" },
+  certTitle: { zh:"牛馬職員職位評定書", en:"Corporate Survival Report" },
   earlyTag: { zh:"職涯異常登出", en:"DUMPED BY HR" },
   completeTag: { zh:"榮譽職涯謝幕", en:"SURVIVED THE GRIND" },
-  creditsText: { zh:"感謝您完整體驗了牛馬職員的辦公室人生 ・ 感謝董事長、管理幹部、人資部門全體工作人員參與演出 ・ 感謝同事、PM、清潔人員友情客串 ・ 特別感謝：您的青春、肝與精神值 ・ 本遊戲純屬虛構，如有雷同、歡迎對號入座 ・ THE END ・ 感謝收看", en:"Thanks for surviving the cubicle hell. Huge shoutout to the Management for their toxic performances. Special props to your youth, liver, and mental health. 100% Fictional, any similarity to your miserable boss is strictly intentional." },
+  creditsText: { zh:"感謝您完整體驗了牛馬職員的辦公室人生 ・ 感謝董事長、管理幹部、人資部門全體工作人員參與演出 ・ 感謝同事、PM、清潔人員友情客串 ・ 特別感謝：您的青春、肝與精神值 ・ 本遊戲純屬虛構，如有雷同、歡迎對號入座 ・ THE END ・ 感謝收看", en:"Thanks for surviving corporate life. Any resemblance to your boss is probably not a coincidence." },
   reincarnateBtn: { zh:"重新投胎", en:"Reset Life" },
   shutdownBtn: { zh:"關閉電腦", en:"Shut Down" },
-  shutdownMsg: { zh:"明天還是要準時打卡喔。", en:"See you bright and early. Don't be late." },
+  shutdownMsg: { zh:"明天還是要準時打卡喔。", en:"See you tomorrow. On time." },
   restartBtn: { zh:"重返職場", en:"Restart" },
   playerLabel: { zh:"牛馬職員", en:"Desk Drone" },
-  cardHintBefore: { zh:"點擊翻開命運卡...", en:"Flip your fate..." },
-  cardHintAfter: { zh:"命運已經翻開，無法重來。", en:"No turning back now." },
+  cardHintBefore: { zh:"點擊翻開命運卡...", en:"Flip the card..." },
+  cardHintAfter: { zh:"命運已經翻開，無法重來。", en:"Decision logged. No edits." },
   catchTip: { zh:"■ 藍色公文(得分) | ▲ 紅色垃圾(扣分)", en:"■ Blue = Productivity | ▲ Red = Trash" },
   catchCaught: { zh:n=>`已接：${n} / 5`, en:n=>`Caught: ${n} / 5` },
   catchMissed: { zh:n=>`漏接：${n} / 3`, en:n=>`Missed: ${n} / 3` },
-  catchFailTrash: { zh:"糟糕！接到了紅色的午餐垃圾，被主管迎頭痛罵！", en:"Yikes. You caught the trash. Boss is screaming." },
-  catchFailDrop: { zh:"重要公文摔了一地，商業機密漏光了。", en:"Oops. Confidential data just hit the floor." },
-  catchSuccess: { zh:"效率爆棚！公文完美分類歸檔！", en:"Peak productivity achieved." },
+  catchFailTrash: { zh:"糟糕！接到了紅色的午餐垃圾，被主管迎頭痛罵！", en:"You caught the trash. HR heard the yelling." },
+  catchFailDrop: { zh:"重要公文摔了一地，商業機密漏光了。", en:"Confidential files: now floor decor." },
+  catchSuccess: { zh:"效率爆棚！公文完美分類歸檔！", en:"Inbox zero. Miracles happen." },
   catchFailPrefix: { zh:"", en:"" },
   catchFailDefault: { zh:"業務疏失。", en:"Human error." },
   memHud: { zh:n=>`配對錯誤：${n} / 3`, en:n=>`Screw-ups: ${n} / 3` },
-  memSuccess: { zh:"神準記憶！三大客戶全部配對成功！", en:"Nailed it. Clients are happy." },
-  memFail: { zh:"把 Gary 叫成 Terry...客戶震怒退件。", en:"Called Gary \"Terry\"... Account lost." },
+  memSuccess: { zh:"神準記憶！三大客戶全部配對成功！", en:"Perfect match. Clients remain calm." },
+  memFail: { zh:"把 Gary 叫成 Terry...客戶震怒退件。", en:"You called Gary \"Terry.\" Account lost." },
   teleReqPrefix: { zh:req=>`主管需求：「要一種 ${req} 的感覺。」`, en:req=>`Manager: Make it look more ${req}."` },
   teleSuccessPrefix: { zh:"", en:"" },
-  teleFail: { zh:req=>`『我要的是${req}！這什麼垃圾？重做！』`, en:req=>`"That’s not ${req}! Absolute garbage. Redo it."` },
+  teleFail: { zh:req=>`『我要的是${req}！這什麼垃圾？重做！』`, en:req=>`"That’s not ${req}! Redo it."` },
   revealBtn: { zh:"揭曉最終職位評定", en:"Reveal My Paygrade" },
   settleBtn: { zh:"繼續", en:"Continue" },
   retryBtn: { zh:"再試一次", en:"Retry" },
@@ -581,12 +599,15 @@ const roster = document.getElementById("roster");
 const unlockRow = document.getElementById("unlock-row");
 
 const rosterData = [
-  { id:"ceo", label:{zh:"董事長", en:"CEO"}, msg:{zh:"首抽投胎是門技術活，看來你上輩子沒練好。", en:"Life is a lottery. Looks like you didn't buy a winning ticket in your past life."}, ok:false },
-  { id:"kin", label:{zh:"老闆兒子Kevin", en:"Kin"}, msg:{zh:"DNA 檢測未通過，你沒有這個血統", en:"You and the CEO share nothing but the same oxygen. Pick again."}, ok:false },
-  { id:"mgr", label:{zh:"管理幹部", en:"Manager"}, msg:{zh:"你才剛入職就想一步登天? 還是去基層好好接受社會毒打吧。", en:"Nice try. Go get humbled in the trenches before you talk about a promotion."}, ok:false },
-  { id:"slave", label:{zh:"牛馬職員", en:"Full-time Employee"}, msg:{zh:"", en:""}, ok:true },
-  { id:"jan", label:{zh:"清潔人員", en:"Junior"}, msg:{zh:"現在連掃地都要碩士學歷和3年工作經驗了，你資歷不夠。", en:"Entry-level position. Must have 5 years of experience and the ability to teleport. You’re underqualified."}, ok:false },
+  { id:"ceo", label:{zh:"董事長", en:"CEO"}, msg:{zh:"首抽投胎是門技術活，看來你上輩子沒練好。", en:"Wrong birth lottery. CEO access denied."}, ok:false },
+  { id:"kin", label:{zh:"老闆兒子Kevin", en:"Kin"}, msg:{zh:"DNA 檢測未通過，你沒有這個血統", en:"DNA check failed. Nepotism denied."}, ok:false },
+  { id:"mgr", label:{zh:"管理幹部", en:"Manager"}, msg:{zh:"你才剛入職就想一步登天? 還是去基層好好接受社會毒打吧。", en:"Promotion denied. Please suffer first."}, ok:false },
+  { id:"slave", label:{zh:"牛馬職員", en:"Employee"}, msg:{zh:"", en:""}, ok:true },
+  { id:"jan", label:{zh:"清潔人員", en:"Junior"}, msg:{zh:"現在連掃地都要碩士學歷和3年工作經驗了，你資歷不夠。", en:"Entry level. Five years required. Naturally."}, ok:false },
 ];
+
+let activeRosterIndex = 0;
+let roleDecision = "idle";
 
 function renderRoster(){
   roster.innerHTML = "";
@@ -595,9 +616,7 @@ function renderRoster(){
     outer.className = "roster-item";
     outer.id = "card-" + r.id;
 
-    const backContent = r.ok
-      ? `<div class="flip-msg">${t("onlyPathMsg")}</div><button class="btn primary flip-enter-btn">${t("enterCompanyBtn")}</button>`
-      : `<div class="flip-msg">${T(r.msg)}</div>`;
+    const backContent = `<div class="flip-msg">${r.ok ? t("onlyPathMsg") : T(r.msg)}</div>`;
 
     outer.innerHTML = `
       <div class="flip-card" id="flip-${r.id}">
@@ -608,26 +627,59 @@ function renderRoster(){
       </div>
       <div class="flip-hint">${t("flipHint")}</div>`;
     roster.appendChild(outer);
-
-    const flipCard = outer.querySelector(".flip-card");
-    flipCard.addEventListener("click", (e)=>{
-      if(e.target.closest(".flip-enter-btn")) return;
-      flipCard.classList.toggle("flipped");
-      if(r.ok && flipCard.classList.contains("flipped")){
-        const fig = document.getElementById("fig-slave");
-        if(fig) fig.classList.add("hunch");
-      }
-    });
-
-    if(r.ok){
-      const enterBtn = outer.querySelector(".flip-enter-btn");
-      enterBtn.addEventListener("click", (e)=>{
-        e.stopPropagation();
-        startGame();
-      });
-    }
   });
+  renderRoleActionButton();
 }
+
+function renderRoleActionButton(){
+  unlockRow.innerHTML = "";
+  const selected = rosterData[activeRosterIndex] || rosterData[0];
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.id = "btn-role-action";
+  btn.className = "btn";
+
+  if(roleDecision === "ready"){
+    btn.classList.add("ready");
+    btn.textContent = t("enterCompanyBtn");
+  } else if(roleDecision === "locked"){
+    btn.classList.add("locked");
+    btn.textContent = t("unavailableRoleBtn");
+    btn.disabled = true;
+  } else {
+    btn.textContent = t("confirmRoleBtn");
+  }
+
+  btn.addEventListener("click", ()=>{
+    if(roleDecision === "ready"){
+      startGame();
+      return;
+    }
+
+    document.querySelectorAll(".flip-card").forEach(el=>el.classList.remove("flipped"));
+    const card = document.getElementById("flip-" + selected.id);
+    if(card) card.classList.add("flipped");
+
+    if(selected.ok){
+      roleDecision = "ready";
+      const fig = document.getElementById("fig-slave");
+      if(fig) fig.classList.add("hunch");
+    } else {
+      roleDecision = "locked";
+    }
+    renderRoleActionButton();
+  });
+
+  unlockRow.appendChild(btn);
+}
+
+function resetRoleDecision(index){
+  activeRosterIndex = Math.max(0, Math.min(rosterData.length - 1, index));
+  roleDecision = "idle";
+  document.querySelectorAll(".flip-card").forEach(el=>el.classList.remove("flipped"));
+  renderRoleActionButton();
+}
+
 renderRoster();
 
 const carouselContainer = document.getElementById("carousel-container");
@@ -645,6 +697,7 @@ function updateActiveDot(){
   document.querySelectorAll(".page-dot").forEach((d, i)=>{
     d.classList.toggle("active", i === idx);
   });
+  if(idx !== activeRosterIndex) resetRoleDecision(idx);
 }
 
 let swipeHintDismissed = false;
@@ -655,6 +708,31 @@ carouselContainer.addEventListener("scroll", ()=>{
     swipeHint.classList.add("hidden");
   }
 });
+
+
+let rosterDragging = false;
+let rosterDragStartX = 0;
+let rosterDragStartScroll = 0;
+carouselContainer.addEventListener("pointerdown", e=>{
+  if(e.pointerType !== "mouse") return;
+  rosterDragging = true;
+  rosterDragStartX = e.clientX;
+  rosterDragStartScroll = carouselContainer.scrollLeft;
+  carouselContainer.setPointerCapture(e.pointerId);
+});
+carouselContainer.addEventListener("pointermove", e=>{
+  if(!rosterDragging) return;
+  carouselContainer.scrollLeft = rosterDragStartScroll - (e.clientX - rosterDragStartX);
+});
+function stopRosterDrag(e){
+  if(!rosterDragging) return;
+  rosterDragging = false;
+  if(carouselContainer.hasPointerCapture?.(e.pointerId)) carouselContainer.releasePointerCapture(e.pointerId);
+  const idx = Math.round(carouselContainer.scrollLeft / carouselContainer.clientWidth);
+  carouselContainer.scrollTo({ left:idx * carouselContainer.clientWidth, behavior:"smooth" });
+}
+carouselContainer.addEventListener("pointerup", stopRosterDrag);
+carouselContainer.addEventListener("pointercancel", stopRosterDrag);
 
 document.getElementById("lang-toggle").addEventListener("click", ()=>{
   currentLang = currentLang === "zh" ? "en" : "zh";
@@ -726,38 +804,38 @@ renderBoard();
 const DIALOGUE_POOL = [
   {
     type: "dialogue",
-    tag: {zh:"影印機 · 奇葩對話", en:"Copier Room · Bizarre Encounter"},
+    tag: {zh:"影印機 · 奇葩對話", en:"Copier Room · Office Drama"},
     npc: {zh:"老鳥同事", en:"Senior Coworker"},
     npcRole: "role-senior",
-    text: {zh:"這疊報表幫我印一下並分類，等等開會要用的。", en:"Could you print and sort these reports for me? I need them for the meeting later."},
+    text: {zh:"這疊報表幫我印一下並分類，等等開會要用的。", en:"Print and sort these before the meeting?"},
     choices: [
-      { text:{zh:"沒問題！包在我身上！", en:"\ Sure, I'll take care of it!\""}, effect: { salary: 50, mental: -1.5 }, reply:{zh:"老鳥拍拍你的肩膀：「有前途！」但你犧牲了午休時間，也磨掉了不少耐性。", en:"The senior pats your shoulder: \"You've got a bright future!\" Your lunch break is officially dead, and so is a chunk of your patience."} },
-      { text:{zh:"不好意思，我現在沒空。", en:"\ Sorry, I’m tied up right now.\""}, effect: { salary: 0, mental: -0.5 }, reply:{zh:"老鳥嘖了一聲，一臉不悅地抱走文件。雖然逃過一劫，但那個眼神你今天都忘不掉。", en:"The senior grumbles and stomps off. You escaped, but that look on their face is going to haunt you all day."} },
-      { text:{zh:"我忙完這件立刻印，順便幫您做頁籤標記！", en:"\"I’ll print them right after this, and add tabs for you!\""}, effect: { salary: 80, mental: 0.5 }, reply:{zh:"老鳥答應了你的條件，還誇你做事有分寸、拿捏得剛剛好。", en:"The senior agrees to your terms. The exchange goes surprisingly well—they praise you for having a good sense of boundaries."} }
+      { text:{zh:"沒問題！包在我身上！", en:"Sure. I’ll handle it."}, effect: { salary: 50, mental: -1.5 }, reply:{zh:"老鳥拍拍你的肩膀：「有前途！」但你犧牲了午休時間，也磨掉了不少耐性。", en:"They praise your hustle. Your lunch break is gone."} },
+      { text:{zh:"不好意思，我現在沒空。", en:"Sorry, I’m slammed."}, effect: { salary: 0, mental: -0.5 }, reply:{zh:"老鳥嘖了一聲，一臉不悅地抱走文件。雖然逃過一劫，但那個眼神你今天都忘不掉。", en:"They leave annoyed. The glare stays all day."} },
+      { text:{zh:"我忙完這件立刻印，順便幫您做頁籤標記！", en:"I’ll do it next—and add tabs."}, effect: { salary: 80, mental: 0.5 }, reply:{zh:"老鳥答應了你的條件，還誇你做事有分寸、拿捏得剛剛好。", en:"Deal accepted. Boundaries somehow worked."} }
     ]
   },
   {
     type: "dialogue",
-    tag: {zh:"茶水間 · 奇葩對話", en:"Break Room · Bizarre Dialogue"},
+    tag: {zh:"茶水間 · 奇葩對話", en:"Break Room · HR Spin"},
     npc: {zh:"人資", en:"HR"},
     npcRole: "role-hr",
-    text: {zh:"為了體恤員工，全面實施『彈性上下班』制度喔！", en:"To support employee wellness, we’re officially rolling out 'Flexible Work Hours'!"},
+    text: {zh:"為了體恤員工，全面實施『彈性上下班』制度喔！", en:"Good news: we now offer “flexible hours.”"},
     choices: [
-      { text:{zh:"太棒了！那明天我可以睡到飽再過來了！", en:"\"Great! Finally I can sleep in!\""}, effect: { salary: 0, mental: -1.5 }, reply:{zh:"主管晚上11點密你：這份報告明早8點前給我。你這才意識到『彈性』是雙向的，而且方向對你很不利。", en:"The next night at 11pm, your manager messages: 'Have this report ready by 8am.' You realize 'flexible' cuts both ways—and not in your favor."} },
-      { text:{zh:"哇！那下班時間也可以彈性提早走嗎？", en:"\"So that means off-hours can 'flexibly extend' too...\" (dead inside)"}, effect: { salary: 0, mental: -3 }, reply:{zh:"發言大逆不道，直接被黑心智重傷。", en:"HR sighs and says you lack company loyalty. Your spirit takes a devastating hit you can't quite shake off."} },
-      { text:{zh:"謝謝HR，我會依照團隊步調彈性調整。", en:"\"Sounds good, I'll ease into it at my own pace.\""}, effect: { salary: 60, mental: 0.5 }, reply:{zh:"人資點頭稱讚你心態健康，你也替自己爭取到一點喘息空間。", en:"HR nods approvingly at your healthy attitude, and you quietly carve out some breathing room."} }
+      { text:{zh:"太棒了！那明天我可以睡到飽再過來了！", en:"Great. I can sleep in!"}, effect: { salary: 0, mental: -1.5 }, reply:{zh:"主管晚上11點密你：這份報告明早8點前給我。你這才意識到『彈性』是雙向的，而且方向對你很不利。", en:"At 11 PM: “Need this by 8.” Flexible, indeed."} },
+      { text:{zh:"哇！那下班時間也可以彈性提早走嗎？", en:"So I can leave early too?"}, effect: { salary: 0, mental: -3 }, reply:{zh:"發言大逆不道，直接被黑心智重傷。", en:"HR flags your “commitment.” Spirit critically damaged."} },
+      { text:{zh:"謝謝HR，我會依照團隊步調彈性調整。", en:"I’ll align with the team."}, effect: { salary: 60, mental: 0.5 }, reply:{zh:"人資點頭稱讚你心態健康，你也替自己爭取到一點喘息空間。", en:"HR approves. You quietly protect your time."} }
     ]
   },
   {
     type: "dialogue",
-    tag: {zh:"走廊 · 奇葩對話", en:"Hallway · Bizarre Dialogue"},
-    npc: {zh:"隔壁 PM", en:"PM from Next Door"},
+    tag: {zh:"走廊 · 奇葩對話", en:"Hallway · Blame Transfer"},
+    npc: {zh:"隔壁 PM", en:"Neighboring PM"},
     npcRole: "role-pm",
-    text: {zh:"這個專案進度大延期，完全是因為你們部門沒有及時交出數據，這報告你今天之內必須修好它！", en:"This project is way behind schedule, entirely because your department didn't deliver data in time. Fix this report today!"},
+    text: {zh:"這個專案進度大延期，完全是因為你們部門沒有及時交出數據，這報告你今天之內必須修好它！", en:"The project is late. Your team gets blamed. Fix it today."},
     choices: [
-      { text:{zh:"當初需求你自己沒寫清楚，憑什麼甩鍋給我們？", en:"\"Your specs were vague to begin with. Why blame us?\""}, effect: { salary: -150, mental: -1.5 }, reply:{zh:"對方跟主管告狀，主管表示大局為重讓你吞下去。合約差點告吹，倒扣薪水。", en:"They complain to your manager, who tells you to just take it for the team. The contract nearly fell through; salary docked."} },
-      { text:{zh:"這屬於跨部門流程，我呈報主管後，今晚加班幫您趕出來。", en:"\"Since it's cross-departmental, I'll notify my manager and pull an all-nighter to finish it.\""}, effect: { salary: 100, mental: -2.5 }, reply:{zh:"搬出高層+專案被你爆肝救回來了，但你的靈魂也黑了兩塊。", en:"You saved the project by burning the midnight oil! Got overtime pay, but lost a bit more of your soul."} },
-      { text:{zh:"我幫忙你看問題出在哪，我們一起補。", en:"\"Let me take a look at what went wrong—we can fix it together.\""}, effect: { salary: 50, mental: 0 }, reply:{zh:"同事跟你一起解決，但靈魂還是黑了一塊。", en:"The coworker helped you fix it, but a piece of your soul died inside."} }
+      { text:{zh:"當初需求你自己沒寫清楚，憑什麼甩鍋給我們？", en:"Your specs were vague. Why blame us?"}, effect: { salary: -150, mental: -1.5 }, reply:{zh:"對方跟主管告狀，主管表示大局為重讓你吞下去。合約差點告吹，倒扣薪水。", en:"They escalate. Your boss says, “Take one for the team.” Pay docked."} },
+      { text:{zh:"這屬於跨部門流程，我呈報主管後，今晚加班幫您趕出來。", en:"I’ll escalate—and finish it tonight."}, effect: { salary: 100, mental: -2.5 }, reply:{zh:"搬出高層+專案被你爆肝救回來了，但你的靈魂也黑了兩塊。", en:"Project saved. Overtime paid. Soul not included."} },
+      { text:{zh:"我幫忙你看問題出在哪，我們一起補。", en:"Let’s find the issue and fix it."}, effect: { salary: 50, mental: 0 }, reply:{zh:"同事跟你一起解決，但靈魂還是黑了一塊。", en:"You fix it together. A little soul still dies."} }
     ]
   }
 ];
@@ -765,64 +843,64 @@ const DIALOGUE_POOL = [
 const CARD_POOL = [
   { 
     type: "card",
-    tag: {zh:"轉角走道 · 機會卡", en:"Corner Hallway · Chance Card"},
-    front: {zh:"組長神秘兮兮地拍你肩膀：「今晚全組聚餐，歡迎你加入這個溫馨大家庭！」", en:"Your team lead taps your shoulder mysteriously: \"Team dinner tonight, welcome to the family!\""},
+    tag: {zh:"轉角走道 · 機會卡", en:"Hallway · Chance Card"},
+    front: {zh:"組長神秘兮兮地拍你肩膀：「今晚全組聚餐，歡迎你加入這個溫馨大家庭！」", en:"Team dinner tonight. Welcome to the “family.”"},
     badChance: 0.55,
     bad: {
-      backLabel: {zh:"AA制強制聚餐", en:"Mandatory Split-Bill Toast"},
-      backText: {zh:"聚餐到一半主管提早離席。結帳時組長拿著帳單說：『含主管每人付$60。』你看著帳單，感覺又被啃掉了一塊靈魂。", en:"...Your manager leaves early. At checkout, the lead says: We're splitting the bill—manager included—so that's $60 each. You stare at the receipt and feel another chunk of your soul chipped away."},
+      backLabel: {zh:"AA制強制聚餐", en:"Mandatory Team Dinner"},
+      backText: {zh:"聚餐到一半主管提早離席。結帳時組長拿著帳單說：『含主管每人付$60。』你看著帳單，感覺又被啃掉了一塊靈魂。", en:"The boss leaves early. Everyone pays $60—including the boss’s share."},
       effect: { salary: -60, mental: -1.5 }
     },
     good: {
-      backLabel: {zh:"神隱成功", en:"Successfully Ghosted It"},
-      backText: {zh:"你藉口臨時有事提早開溜，還被主管誤會是去談客戶，意外加了印象分。", en:"You slipped out early with an excuse. Your manager assumed you were meeting a client and was quietly impressed."},
+      backLabel: {zh:"神隱成功", en:"Strategic Disappearance"},
+      backText: {zh:"你藉口臨時有事提早開溜，還被主管誤會是去談客戶，意外加了印象分。", en:"You leave early. The boss assumes it was client work. Bonus points."},
       effect: { salary: 30, mental: 0.5 }
     }
   },
   { 
     type: "card",
-    tag: {zh:"無人角落 · 機會卡", en:"Empty Corner · Chance Card"},
-    front: {zh:"你的KPI連續拿到 A+！總經理在週會上親自點名要提名你做小主管！", en:"Your KPIs are consistently A+! The GM personally names you for a promotion at the weekly meeting!"},
+    tag: {zh:"無人角落 · 機會卡", en:"Quiet Corner · Chance Card"},
+    front: {zh:"你的KPI連續拿到 A+！總經理在週會上親自點名要提名你做小主管！", en:"A+ KPIs. The GM mentions a promotion."},
     badChance: 0.55,
     bad: {
-      backLabel: {zh:"大環境不景氣 · 凍結升遷", en:"Economic Downturn"},
-      backText: {zh:"下午公告：因全球通膨，凍結所有晉升名額。該職缺由董事長兒子Kevin兼任。你盯著公告看了很久，久到同事都問你還好嗎。", en:"ANN: Promotions are frozen. The role has been claimed by the CEO's son, just back from his travels abroad. You stare at the notice so long a coworker asks if you're okay."},
+      backLabel: {zh:"大環境不景氣 · 凍結升遷", en:"Promotion Freeze"},
+      backText: {zh:"下午公告：因全球通膨，凍結所有晉升名額。該職缺由董事長兒子Kevin兼任。你盯著公告看了很久，久到同事都問你還好嗎。", en:"Promotions freeze. Kevin gets the role anyway. Classic."},
       effect: { salary: 0, mental: -2.5 }
     },
     good: {
-      backLabel: {zh:"升遷成真", en:"The Promotion Is Real"},
-      backText: {zh:"Kevin這次剛好沒興趣搶功，升遷公告正式生效，你的職稱與薪水同步調高。", en:"For once the chairman's son wasn't interested. The promotion goes through for real—your title and pay both go up."},
+      backLabel: {zh:"升遷成真", en:"Actual Promotion"},
+      backText: {zh:"Kevin這次剛好沒興趣搶功，升遷公告正式生效，你的職稱與薪水同步調高。", en:"Kevin passes. You get the title and raise. Somehow."},
       effect: { salary: 250, mental: 1 }
     }
   },
   { 
     type: "card",
-    tag: {zh:"下午茶時間 · 機會卡", en:"Afternoon Tea · Chance Card"},
-    front: {zh:"同事們在座位區騷動，正在發起瘋狂午茶盲盒團購！還差一個人就免運費了，大家都轉頭看著你...", en:"Your coworkers are buzzing about a group order for mystery-box afternoon tea! One more person for free shipping, and everyone's looking at you..."},
+    tag: {zh:"下午茶時間 · 機會卡", en:"Snack Break · Chance Card"},
+    front: {zh:"同事們在座位區騷動，正在發起瘋狂午茶盲盒團購！還差一個人就免運費了，大家都轉頭看著你...", en:"One more order unlocks free shipping. Everyone looks at you."},
     badChance: 0.55,
     bad: {
-      backLabel: {zh:"被強迫跟單", en:"Peer-Pressured into Buying"},
-      backText: {zh:"為了辦公室和諧你只好跟著買了。你得到了一杯根本喝不懂的高級排毒綠奶昔，還有一種說不出的疲憊感。", en:"For office harmony, you join in. You end up with a fancy detox smoothie you don't understand at all, and an inexplicable wave of exhaustion."},
+      backLabel: {zh:"被強迫跟單", en:"Group Order Victim"},
+      backText: {zh:"為了辦公室和諧你只好跟著買了。你得到了一杯根本喝不懂的高級排毒綠奶昔，還有一種說不出的疲憊感。", en:"You join in and receive a $15 mystery smoothie. Teamwork."},
       effect: { salary: -150, mental: -0.5 }
     },
     good: {
-      backLabel: {zh:"婉拒成功", en:"Politely Declined"},
-      backText: {zh:"你笑著說已經吃過下午茶了，同事們也沒為難你。", en:"You smile and say you've already eaten. No hard feelings—you."},
+      backLabel: {zh:"婉拒成功", en:"Clean Escape"},
+      backText: {zh:"你笑著說已經吃過下午茶了，同事們也沒為難你。", en:"You decline. Nobody starts a Slack thread."},
       effect: { salary: 0, mental: 0.5 }
     }
   }
 ];
 
 const GAME_POOL = [
-  { type: "catch", tag: {zh:"辦公桌 · 極速接文件", en:"Desk Space · Rapid Document Catch"} },
-  { type: "memory", tag: {zh:"會議室 · 客戶名字記憶", en:"Meeting Room · Client Name Memory Match"} },
-  { type: "telepathy", tag: {zh:"設計部 · 形容詞通靈", en:"Design Dept · Guess the Manager's Vague Request"} }
+  { type: "catch", tag: {zh:"辦公桌 · 極速接文件", en:"Desk · Catch the Files"} },
+  { type: "memory", tag: {zh:"會議室 · 客戶名字記憶", en:"Meeting Room · Name Match"} },
+  { type: "telepathy", tag: {zh:"設計部 · 形容詞通靈", en:"Design · Read the Boss’s Mind"} }
 ];
 
 const FINAL_BOSS_EVENT = {
   type: "final",
   tag: {zh:"👑 董事長室", en:"👑 CEO's Office"},
-  text: {zh:"恭喜你撐過了 10 次命運考驗來到這裡！我看過你一路上資產與精神值的起伏了。現在，我要親自決定你未來的職位！", en:"Congratulations on surviving 10 trials to get here! I've seen your salary and mental health rise and fall along the way. Now, I will personally decide your future position!"}
+  text: {zh:"恭喜你撐過了 10 次命運考驗來到這裡！我看過你一路上資產與精神值的起伏了。現在，我要親自決定你未來的職位！", en:"You survived 10 trials. Now I decide your corporate fate."}
 };
 
 let state = { salary:4500, mental:5, step:0, pos:0 };
@@ -1102,19 +1180,42 @@ function renderCatch(ev){
   let caught = 0, missed = 0, done = false;
   let items = [];
 
-  function movePaddle(dir){
-    paddleX = Math.max(0, Math.min(areaW-paddleW, paddleX + dir*32));
+  function movePaddle(dir, amount = 4){
+    paddleX = Math.max(0, Math.min(areaW-paddleW, paddleX + dir*amount));
     paddle.style.left = paddleX+"px";
   }
-  document.getElementById("btn-left").addEventListener("click", ()=>movePaddle(-1));
-  document.getElementById("btn-right").addEventListener("click", ()=>movePaddle(1));
-  
-  function keyHandler(e){
-    if(done) return;
-    if(e.key === "ArrowLeft") movePaddle(-1);
-    if(e.key === "ArrowRight") movePaddle(1);
+
+  let holdDirection = 0;
+  let holdFrame = null;
+  function holdLoop(){
+    if(done || !holdDirection){ holdFrame = null; return; }
+    movePaddle(holdDirection, 4.5);
+    holdFrame = requestAnimationFrame(holdLoop);
   }
-  document.addEventListener("keydown", keyHandler);
+  function startHold(dir, btn, e){
+    if(done) return;
+    e.preventDefault();
+    holdDirection = dir;
+    btn.classList.add("holding");
+    btn.setPointerCapture?.(e.pointerId);
+    if(!holdFrame) holdFrame = requestAnimationFrame(holdLoop);
+  }
+  function stopHold(btn, e){
+    holdDirection = 0;
+    btn.classList.remove("holding");
+    if(holdFrame){ cancelAnimationFrame(holdFrame); holdFrame = null; }
+    if(e && btn.hasPointerCapture?.(e.pointerId)) btn.releasePointerCapture(e.pointerId);
+  }
+  [
+    [document.getElementById("btn-left"), -1],
+    [document.getElementById("btn-right"), 1]
+  ].forEach(([btn, dir])=>{
+    btn.addEventListener("pointerdown", e=>startHold(dir, btn, e));
+    btn.addEventListener("pointerup", e=>stopHold(btn, e));
+    btn.addEventListener("pointercancel", e=>stopHold(btn, e));
+    btn.addEventListener("pointerleave", e=>{ if(e.buttons === 0) stopHold(btn, e); });
+    btn.addEventListener("contextmenu", e=>e.preventDefault());
+  });
 
   function spawnItem(){
     if(done) return;
@@ -1171,7 +1272,8 @@ function renderCatch(ev){
     done = true;
     clearTimeout(catchSpawnTimer);
     cancelAnimationFrame(catchLoopId);
-    document.removeEventListener("keydown", keyHandler);
+    holdDirection = 0;
+    if(holdFrame){ cancelAnimationFrame(holdFrame); holdFrame = null; }
     items.forEach(el=>el.remove());
     
     const res = document.createElement("div");
@@ -1251,10 +1353,10 @@ function renderMemory(ev){
 
 function renderTelepathy(ev){
   const scriptPool = [
-    { req:{zh:"五彩斑斕的黑", en:"a colorful black"}, correct:"A", msg:{zh:"你居然看懂了黑色的層次，主管讚嘆你是視覺天才。", en:"You actually understood the layers of black. The manager calls you a visual genius."} },
-    { req:{zh:"大氣中帶點靈動", en:"grand, yet subtly dynamic"}, correct:"B", msg:{zh:"水藍色的波點完美擊中主管的審美，他滿意地點點頭。", en:"The light blue dots perfectly matched the manager's taste. He nods with satisfaction."} },
-    { req:{zh:"沉穩不失跳脫的線條", en:"grounded lines that still feel unconventional"}, correct:"C", msg:{zh:"交錯的對角斜線讓主管覺得非常高冷有深度。", en:"The crisscrossing diagonal lines strike the manager as cool and deep."} },
-    { req:{zh:"充滿未來科幻感", en:"loaded with futuristic, sci-fi aesthetics"}, correct:"D", msg:{zh:"流動的高級科技漸層完美符合通靈指標。", en:"The flowing high-tech gradient perfectly matches what he was thinking."} }
+    { req:{zh:"五彩斑斕的黑", en:"colorful black"}, correct:"A", msg:{zh:"你居然看懂了黑色的層次，主管讚嘆你是視覺天才。", en:"You understood “colorful black.” Promotion pending."} },
+    { req:{zh:"大氣中帶點靈動", en:"bold but lively"}, correct:"B", msg:{zh:"水藍色的波點完美擊中主管的審美，他滿意地點點頭。", en:"The dots match the vibe. Approved."} },
+    { req:{zh:"沉穩不失跳脫的線條", en:"stable but edgy"}, correct:"C", msg:{zh:"交錯的對角斜線讓主管覺得非常高冷有深度。", en:"The lines look “strategic.” Approved."} },
+    { req:{zh:"充滿未來科幻感", en:"futuristic"}, correct:"D", msg:{zh:"流動的高級科技漸層完美符合通靈指標。", en:"The gradient reads “future.” Approved."} }
   ];
   const quiz = scriptPool[Math.floor(Math.random() * scriptPool.length)];
   const reqText = T(quiz.req);
@@ -1395,8 +1497,8 @@ function determineEnding(){
   if (state.mental <= 0) {
     return {
       isEarly: true,
-      title: {zh:"精神病院VIP", en:"The Lunatic Asylum VIP"},
-      quote: {zh:"【職涯提前登出】你的心智值在第 " + state.step + " 關完全歸零！公司的內卷、KPI壓力和主管的通靈要求徹底擊碎了你的靈魂。你現在看見白色影印紙都會發抖，大喊著『五彩斑斕的黑』。你在大考驗結束前就被強制送醫治療了。", en:"[DUMPED BY HR] Your mental health hit zero at stage " + state.step + "! The rat race, KPI pressure, and your manager's cryptic demands shattered your soul completely. You now shudder at the sight of blank printer paper, muttering about \"a colorful kind of black\". You were institutionalized before the trial could finish."},
+      title: {zh:"精神病院VIP", en:"Burnout VIP"},
+      quote: {zh:"【職涯提前登出】你的心智值在第 " + state.step + " 關完全歸零！公司的內卷、KPI壓力和主管的通靈要求徹底擊碎了你的靈魂。你現在看見白色影印紙都會發抖，大喊著『五彩斑斕的黑』。你在大考驗結束前就被強制送醫治療了。", en:"[DUMPED BY HR] Mental health hit zero at stage " + state.step + ". KPIs won. You now fear blank printer paper and \"colorful black.\""},
       fig: "autopilot"
     };
   }
@@ -1404,8 +1506,8 @@ function determineEnding(){
   if (state.salary >= 5000) {
     return {
       isEarly: false,
-      title: {zh:"終極資本主義祕密人物", en:"The Capitalism Mastermind"},
-      quote: {zh:"不可思議！你的產能與績效達到了完美境界。總經理在週會上公開提名你為『模範員工』並發放高額獎金。但當你提出升遷請求時，主管只是笑了笑說：『你的業務能力太不可取代了，公司需要你留在第一線，管理職不適合你。』你擁有了財富，但永遠失去了自由。", en:"Incredible! Your output and performance reached perfection. The GM publicly named you 'Model Employee' with a huge bonus. But when you asked for a promotion, your manager just smiled: 'You're too irreplaceable on the front line — management isn't for you.' You gained wealth, but lost your freedom forever."},
+      title: {zh:"終極資本主義祕密人物", en:"Capitalism’s Chosen One"},
+      quote: {zh:"不可思議！你的產能與績效達到了完美境界。總經理在週會上公開提名你為『模範員工』並發放高額獎金。但當你提出升遷請求時，主管只是笑了笑說：『你的業務能力太不可取代了，公司需要你留在第一線，管理職不適合你。』你擁有了財富，但永遠失去了自由。", en:"Perfect output. Big bonus. Promotion denied—you’re 'too valuable where you are.' Golden handcuffs unlocked."},
       fig: "overtime"
     };
   }
@@ -1413,26 +1515,26 @@ function determineEnding(){
   if (state.salary >= 4700 && state.mental >= 3.5) {
     return { 
       isEarly: false, 
-      title: {zh:"卷王之王", en:"The Overtime King"},
-      quote: {zh:"你的KPI連續拿到 A+！你在各種考驗中強行維持住資產，並展現了極高的狼性與耐受度。你在這個溫馨大家庭裡成功突圍，完美適應了高難度的辦公室生存法則。", en:"Your KPIs are consistently A+! You held onto your assets through every trial and showed incredible hustle and endurance. You've successfully broken through in this 'warm family' and mastered the high-difficulty rules of office survival."},
+      title: {zh:"卷王之王", en:"King of the Grind"},
+      quote: {zh:"你的KPI連續拿到 A+！你在各種考驗中強行維持住資產，並展現了極高的狼性與耐受度。你在這個溫馨大家庭裡成功突圍，完美適應了高難度的辦公室生存法則。", en:"A+ KPIs, solid pay, endless stamina. You mastered corporate survival—and forgot what daylight looks like."},
       fig: "overtime" 
     };
   }
 
   if(state.salary < 4450){
-    return { isEarly: false, title:{zh:"頂級背鍋俠", en:"The Ultimate Scapegoat"},
-      quote:{zh:"你雖然撐完了 10 關，但在各項業務中屢屢出錯，完美承擔了公司所有的雷。你不是在背鍋，就是在去背鍋的路上。主管和同事們都發自內心地感謝你的巨大犧牲。", en:"You made it through all 10 stages, but kept making mistakes along the way, perfectly absorbing every blow for the company. If you're not taking the blame, you're on your way to take it. Your manager and coworkers sincerely thank you for your huge sacrifice."},
+    return { isEarly: false, title:{zh:"頂級背鍋俠", en:"Chief Scapegoat"},
+      quote:{zh:"你雖然撐完了 10 關，但在各項業務中屢屢出錯，完美承擔了公司所有的雷。你不是在背鍋，就是在去背鍋的路上。主管和同事們都發自內心地感謝你的巨大犧牲。", en:"You survived all 10 stages and absorbed every mistake. The company thanks you for your service—and blame."},
       fig:"scapegoat" };
   }
   
   if(state.mental <= 2){
-    return { isEarly: false, title:{zh:"自動導航型社畜", en:"The Autopilot Drone"},
-      quote:{zh:"你在各種奇葩對話與折磨中耗盡了心智。你的精神已進化到靈魂肉體分離的最高境界。即使主管在前面口沫橫飛地罵你，你的大腦都會自動切換成靜音模式。", en:"You've drained your sanity through endless bizarre conversations and torment. Your spirit has evolved to the ultimate state of mind-body separation. While your manager rants in front of you, your brain automatically switches to mute."},
+    return { isEarly: false, title:{zh:"自動導航型社畜", en:"Autopilot Employee"},
+      quote:{zh:"你在各種奇葩對話與折磨中耗盡了心智。你的精神已進化到靈魂肉體分離的最高境界。即使主管在前面口沫橫飛地罵你，你的大腦都會自動切換成靜音模式。", en:"Your body attends meetings. Your soul does not. Manager audio is permanently muted."},
       fig:"autopilot" };
   }
   
-  return { isEarly: false, title:{zh:"萬能工具人", en:"The Omnipotent Jack-of-All-Trades"},
-    quote:{zh:"你表現平平，挑不出大毛病。但修公司水電、做臨時美編、精準通靈主管需求、甚至應付客戶你全都會，是公司最愛、最無法取代的一顆萬能螺絲釘。", en:"Your performance is unremarkable, but flawless. You can fix the office plumbing, whip up last-minute graphics, read your manager's mind, and handle clients — the company's favorite, irreplaceable all-purpose screw."},
+  return { isEarly: false, title:{zh:"萬能工具人", en:"Corporate Swiss Army Knife"},
+    quote:{zh:"你表現平平，挑不出大毛病。但修公司水電、做臨時美編、精準通靈主管需求、甚至應付客戶你全都會，是公司最愛、最無法取代的一顆萬能螺絲釘。", en:"You fix tech, designs, clients, and chaos. Not promoted—just permanently useful."},
     fig:"jack" };
 }
 
@@ -1532,6 +1634,9 @@ function backToRosterSelect(){
   document.querySelectorAll(".cell").forEach(c => c.classList.remove("done"));
   
   document.querySelectorAll(".flip-card").forEach(el => el.classList.remove("flipped"));
+  roleDecision = "idle";
+  activeRosterIndex = 0;
+  renderRoleActionButton();
   const slaveFig = document.getElementById("fig-slave");
   if(slaveFig) slaveFig.classList.remove("hunch");
   setExpression(slaveFig, "default");
